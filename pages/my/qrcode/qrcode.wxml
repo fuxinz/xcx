@@ -1,0 +1,7 @@
+<!--pages/my/qrcode/qrcode.wxml-->
+<view class='container'>
+  <view class='qrcode-wrap'>
+    <image class='qrcode' src='../../../img/qrcode.jpg'></image>
+  </view>
+  <view class='footer-tip'>为了提高客户粘性，更好的服务门店客户让其快速了解门店优惠，达到刺激用户消费的目的；推荐用户扫码领取小二专属卡包。</view>
+</view>

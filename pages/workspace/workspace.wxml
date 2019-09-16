@@ -1,0 +1,218 @@
+<!--pages/workspace/workspace.wxml-->
+<view class='header'>
+  <swiper class='header-swiper' circular >
+    <block wx:for="{{bannerList}}" wx:key="{{item.id}}">
+      <swiper-item class='header-swiper-item' bindtap='handleHeaderClick' data-item='{{item}}'>
+        <image src="{{item.logo}}" />
+        <!-- <view class='header-txt'>{{item.content || ''}}</view> -->
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class='page-wrap'>
+  <!-- <image class='header-bg' src='../../img/invitation_1.jpg'></image> -->
+  <!-- <view class='header'>
+    <view class='header-title'>你的幸福，常常在别人眼里</view>
+    <text class='header-txt'>一个人总是仰望和羡慕着别人的幸福，一回头，却发现自己正被仰望</text>
+  </view> -->
+
+  <view class='panel'>
+    <view class='panel-header-first'>推荐应用</view>
+    <view class='panel-body flex'>
+      <view class='flex1' bindtap='goToNextView' data-type='busness'>
+        <image class='icon' src='../../img/icon01.png'></image>
+        <view>商机来了</view>
+      </view>
+      <!-- <view class='flex1'>
+        <image class='icon' src='../../img/icon02.png'></image>
+        <view>车云码头</view>
+      </view> -->
+      <view class='flex1' bindtap='goToNextView' data-type='socialMarketing'>
+        <image class='icon' src='../../img/icon03.png'></image>
+        <view>社群营销</view>
+      </view>
+      <view class='flex1' bindtap='goToNextView' data-type='bill'>
+        <image class='icon' src='../../img/icon04.png'></image>
+        <view>销售开单</view>
+      </view>
+      <view class='flex1' bindtap='goToNextView' data-type='service'>
+        <image class='icon' src='../../img/icon04.png'></image>
+        <view>快捷开单</view>
+      </view>
+    </view>
+  </view>
+  <view class='panel'>
+    <view class='panel-header flex'>
+      <image class='icon' src='../../img/icon05.png'></image>
+      <view class='panel-header-middle flex1'>
+        <view class='panel-header-middle-title'>系统消息</view>
+        <view class='panel-header-middle-time'>{{nowTime}}</view>
+      </view>
+    </view>
+    <view class='system-tip'>您有
+      <text class='red'>{{systemMsgNum}}</text> 条系统消息未读</view>
+    <view class='panel-footer'>查看详情</view>
+  </view>
+  <view class='panel'>
+    <view class='panel-header flex'>
+      <image class='icon' src='../../img/icon05.png'></image>
+      <view class='panel-header-middle flex1'>
+        <view class='panel-header-middle-title'>客户全貌</view>
+        <view class='panel-header-middle-time'>{{nowTime}}</view>
+      </view>
+      <view class='panel-header-right'>本月</view>
+    </view>
+    <view class='panel-main'>
+      <view class='panel-main-header'>
+        <text>客户总数</text>
+        <view class=''>
+          <text class='blue' style='font-size: 40rpx;'>{{customerData.custSum ? customerData.custSum : 0}}</text> 人
+        </view>
+      </view>
+      <view class='panel-main-center gray'>
+        <view class='flex'>
+          <view class='flex1'>潜在流失：
+            <text class='blue'>{{customerData.potentialSum ? customerData.potentialSum : 0}}</text> 人</view>
+          <view class='flex1'>商机线索：
+            <text class='blue'>{{customerData.busiOppSum ? customerData.busiOppSum : 0}}</text> 人</view>
+        </view>
+        <view class='flex'>
+          <view class='flex1'>铁杆车主：
+            <text class='blue'>{{customerData.FSum ? customerData.FSum : 0}}</text> 人</view>
+          <view class='flex1'>BBA车主：
+            <text class='blue'>{{customerData.BBASum ? customerData.BBASum : 0}}</text> 人</view>
+        </view>
+      </view>
+      <view class='panel-main-footer flex'>
+        <view class='flex1'>
+          洗车频率
+          <view class='blue'>{{customerData.washFQ ? customerData.washFQ : 0}}</view>
+          <text class='gray'>（人/周）</text>
+        </view>
+        <view class='flex1'>
+          美容频率
+          <view class='blue'>{{customerData.beautFQ ? customerData.beautFQ : 0}}</view>
+          <text class='gray'>（人/周）</text>
+        </view>
+        <view class='flex1'>
+          保养频率
+          <view class='blue'>{{customerData.maintainFQ ? customerData.maintainFQ : 0}}</view>
+          <text class='gray'>（人/周）</text>
+        </view>
+      </view>
+    </view>
+    <view class='panel-footer'>查看详情</view>
+  </view>
+
+  <view class='panel'>
+    <view class='panel-header flex'>
+      <image class='icon' src='../../img/icon05.png'></image>
+      <view class='panel-header-middle flex1'>
+        <view class='panel-header-middle-title'>我的销售开单</view>
+        <view class='panel-header-middle-time'>{{nowTime}}</view>
+      </view>
+      <view class='panel-header-right'>本月</view>
+    </view>
+    <view class='panel-main personal-selling-wrap'>
+      <view class='panel-main-header'>
+        <text>销售总额</text>
+        <view class='red'>
+          ￥
+          <text style='font-size: 40rpx;'>{{mySaleOrder.xsze ? mySaleOrder.xsze : 0}}</text>
+        </view>
+      </view>
+      <view class='panel-main-center gray' style='border-bottom: none;'>
+        <view class='flex'>
+          <view class='flex1'>开单数量：
+            <text class='blue'>{{mySaleOrder.xsdl ? mySaleOrder.xsdl : 0}}</text> 单</view>
+          <view class='flex1'>店内排名：
+            <text class='blue'>{{mySaleOrder.rank ? mySaleOrder.rank : 0}}</text>
+          </view>
+        </view>
+      </view>
+      <view style="text-align: center;">最近7日销售额</view>
+      <canvas class='canvas' canvas-id="lineCanvas" disable-scroll="true" class="canvas"></canvas>
+    </view>
+    <view class='panel-footer'>查看详情</view>
+  </view>
+  <view class='panel'>
+    <view class='panel-header flex'>
+      <image class='icon' src='../../img/icon05.png'></image>
+      <view class='panel-header-middle flex1'>
+        <view class='panel-header-middle-title'>门店销售开单</view>
+        <view class='panel-header-middle-time'>{{nowTime}}</view>
+      </view>
+      <view class='panel-header-right'>本月</view>
+    </view>
+    <view class='panel-main'>
+      <view class='panel-main-header'>
+        <text>销售总额</text>
+        <view class='red'>
+          ￥
+          <text style='font-size: 40rpx;'>{{saleOrder.storeSaleSum || 0}}</text>
+        </view>
+      </view>
+      <view class='panel-main-footer flex'>
+        <view class='flex1'>
+          进场台次
+          <view class='blue'>0</view>
+        </view>
+        <view class='flex1'>
+          开单总数
+          <view class='blue'>{{saleOrder.storeSaleCount}}</view>
+        </view>
+        <view class='flex1'>
+          商机占比
+          <view class='blue'>0%</view>
+        </view>
+      </view>
+    </view>
+    <view class='panel-footer'>查看详情</view>
+  </view>
+
+  <view class='panel'>
+    <view class='panel-header flex'>
+      <image class='icon' src='../../img/icon05.png'></image>
+      <view class='panel-header-middle flex1'>
+        <view class='panel-header-middle-title'>项目销售排行</view>
+        <view class='panel-header-middle-time'>{{nowTime}}</view>
+      </view>
+      <view class='panel-header-right'>本月</view>
+    </view>
+    <view class='panel-main panel-padding-none'>
+      <view class='table'>
+        <view class='table-header gray flex'>
+          <text class='table-td' style='width: 70rpx;'>排名</text>
+          <text class='table-td flex3'>项目</text>
+          <text class='table-td flex1'>销量</text>
+          <text class='table-td flex1'>客单价</text>
+        </view>
+        <view class='table-th flex' wx:for="{{monthRankList}}" wx:key='{{index}}'>
+          <text class='gray table-td-bold' style='color: #ff6600'>{{index+1}}</text>
+          <text class='flex3'>{{item.projectName}}</text>
+          <text class='flex1'>{{item.total}}</text>
+          <text class='flex1'>￥{{item.price}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='panel-footer'>查看详情</view>
+  </view>
+  <!-- <view class='panel'>
+    <view class='panel-header flex'>
+      <image class='icon' src='../../img/icon05.png'></image>
+      <view class='panel-header-middle flex1'>
+        <view class='panel-header-middle-title'>社群营销</view>
+        <view class='panel-header-middle-time'>2017-10-16  08:33</view>
+      </view>
+    </view>
+    <swiper class='panel-swiper'>
+      <block wx:for="{{imgUrls}}" wx:key="item">
+        <swiper-item class='panel-swiper-item'>
+          <image src="{{item}}" class="slide-image"/>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class='panel-footer'>查看详情</view>
+  </view> -->
+
+</view>

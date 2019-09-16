@@ -1,0 +1,99 @@
+/* pages/drawBill/input/input.wxss */
+page{
+  background-color: #f8f8f8;
+  font-size: 28rpx;
+  padding-bottom: 200rpx;
+}
+.header-title{
+  height: 80rpx;
+  align-items: center;
+  padding: 0 30rpx;
+  color: #b3b3b3;
+}
+.header-title-icon{
+  width: 40rpx;
+  height: 40rpx;
+  padding-right: 30rpx;
+}
+.form-wrap{
+  padding: 0 10rpx;
+  background-color: #fff;
+}
+.form-item{
+  min-height: 90rpx;
+  border-bottom: 1rpx solid #f8f8f8;
+  align-items: center;
+}
+.form-item:last-child{
+  border: none;
+}
+.form-item-title{
+  width: 230rpx;
+  padding-left: 15rpx;
+  line-height: 90rpx;
+}
+.must-fill-title::before{
+  content: ' * ';
+  color: red;
+}
+.form-item input{
+  height: 90rpx;
+}
+.form-item-tip{
+  color: #999999;
+}
+.form-item-textarea{
+  max-height: 100rpx;
+  padding-top: 30rpx;
+}
+.form-item-picker{
+  height: 90rpx;
+  line-height: 90rpx;
+  color: #999999;
+}
+.has-switch .form-item-title{
+  line-height: normal;
+}
+.form-bottom-tip{
+  color: #999999;
+  padding-left: 40rpx;
+}
+
+.footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 96rpx;
+  background-color: #fff;
+  border-top: 1rpx solid #f2f2f2;
+}
+.footer-tip{
+  padding: 0 30rpx;
+  text-align: right;
+  padding-top: 10rpx;
+}
+.footer-tip_txt{
+  color: #999;
+  font-size: 28rpx;
+}
+.pre-btn{
+  width: 120rpx;
+  height: 96rpx;
+  text-align: center;
+  font-size: 26rpx;
+  border-right: 1rpx solid #f2f2f2;
+}
+.pre-btn .icon{ 
+  width: 32rpx;
+  height: 32rpx;
+  padding-top: 15rpx;
+}
+.last-btn{
+  width: 180rpx;
+  text-align: center;
+  background-color: #ff3300;
+  color: #fff;
+  line-height: 96rpx;
+  border-radius: 0;
+}

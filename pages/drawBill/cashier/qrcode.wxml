@@ -1,0 +1,27 @@
+<!--pages/drawBill/cashier/qrcode.wxml-->
+<view class='container'>
+  <view class='inner-box'>
+    <view class='price'>￥{{amount}}</view>
+    <text class='price-txt'>支付金额</text>
+    <view class='qrcode_wrap' wx:if='{{payMet=="2"}}'>
+      <image class='qrcode-pic' src='{{payUrl}}'></image>
+    </view>
+    <view class='qrcode_wrap' wx:else>
+      <canvas class='canvas' style="width: 200px; height: 200px;" canvas-id="myQrcode"></canvas>
+    </view>
+    <view class='tip-txt'>
+      请车主扫码，进行<text wx:if='{{payMet==3}}'>分期</text>支付
+    </view>
+
+    <view class='flex other-tip'>
+      <text class=''>注：</text>
+      <view class='flex1' style='text-align: left;'>
+        <view>1、该二维码只能扫一次，不能重复扫描；</view>
+        <view wx:if='{{payMet==3}}'>2、该订单不能重复生成车云卡分期二维码；</view>
+      </view>
+    </view>
+  </view>
+  <navigator url="/pages/workspace/workspace" open-type="switchTab">
+    <view class='footer'>首页</view>
+  </navigator>
+</view>

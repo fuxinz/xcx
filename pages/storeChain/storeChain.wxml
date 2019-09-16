@@ -1,0 +1,14 @@
+<!--pages/storeChain/storeChain.wxml-->
+<view class='container'>
+  <scroll-view class='tabber-wrap' scroll-x>
+    <view class='tabbar-item {{item.id==indexId ? "tabbar-item-active" : ""}}'
+      id='{{item.id}}'
+      wx:for='{{tabbarData}}'
+      wx:key='{{item.id}}'
+      bindtap='changeTabbarAction'
+    >{{item.txt}}</view>
+  </scroll-view>
+  <view class='banner'>
+    <image src='../../img/u729.jpg'></image>
+  </view>
+</view>

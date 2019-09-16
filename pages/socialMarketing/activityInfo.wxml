@@ -1,0 +1,41 @@
+<!--pages/socialMarketing/activityInfo.wxml-->
+<view class='warp-content'>
+  <view class='header'>
+    <view class='search-con'>
+      <input placeholder='车主 / 手机号' type='text' confirm-type='search' bindconfirm='confimSearch'></input>
+      <image src='../../img/icon-search.png'></image>
+    </view>
+    <view class='sheet-tab'>
+      <view class='s-title' bindtap='showCengFun'><text>{{sheetTitle}}</text><image src='{{showCeng ? iconUp: iconDown}}'></image></view>
+      <view class='s-num'>共计{{total}}人</view>
+    </view>
+  </view>
+  <view class='ceng' wx:if="{{showCeng}}">
+    <view class='li' bindtap='selectedFun' data-status=''><text>领券总张数</text><image src='{{currentSelectStatus == "" ? selectIcon :""}}'></image></view>
+    <view class='li' bindtap='selectedFun' data-status='1'><text>券使用张数</text><image src='{{currentSelectStatus == "1" ? selectIcon :""}}'></image></view>
+    <view class='li' bindtap='selectedFun' data-status='0'><text>券未用张数</text><image src='{{currentSelectStatus == "0" ? selectIcon :""}}'></image></view>
+    <view class='li' bindtap='selectedFun' data-status='2'><text>券已过期</text><image src='{{currentSelectStatus == "2" ? selectIcon :""}}'></image></view>
+  </view>
+
+  <view class='list-con'>
+    <view class='item' wx:for='{{records}}' wx:key='{{item.id}}'>
+      <view class='client-info'>
+        <view class='list-title flex'>
+          <view class='flex1 flex list-title_left'>
+            <text>{{item.socialUserName}}</text>
+            <!-- <text>鄂A · 10FE9</text> -->
+          </view>
+          <text>{{item.socialUserPhone}}</text>
+        </view>
+      </view>
+      <view class='coupon-info tc'>
+        <view class='coupon-info-wrap'><view>领取面值</view><view class='colorRed'>{{item.exeName}}</view></view>
+        <view class='coupon-info-wrap'><view>使用情况</view>
+          <view class='colorRed'>{{item.status==0? '未使用' : item.status==1?'已使用' : '已过期'}}</view>
+        </view>
+        <view class='coupon-info-wrap'><view>领取来源</view><view class='colorRed'>{{item.source}}</view></view>
+      </view>
+    </view>
+  </view>
+  
+</view>

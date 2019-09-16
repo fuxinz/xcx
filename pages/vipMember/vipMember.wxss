@@ -1,0 +1,110 @@
+/* pages/vipMember/vipMember.wxss */
+page{
+  background-color: #f2f2f2;
+}
+.header{
+  height: 140rpx;
+  padding: 0 30rpx;
+  border-top: 1rpx solid #f0f0f0;
+  border-bottom: 20rpx solid #f0f0f0;
+  align-items: center;
+  background-color: #fff;
+}
+.user-avatar-wrap{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 20rpx;
+}
+.user-avatar{
+  width: 100%;
+  height: 100%;
+}
+.header-txt{
+  padding-top: 15rpx;
+  font-size: 26rpx;
+  color: #999999;
+}
+.main{
+  min-height: 850rpx;
+}
+.product-list{
+  padding: 30rpx 30rpx 60rpx;
+  background-color: #fff;
+}
+.option-item{
+  height: 112rpx;
+  padding: 0 30rpx;
+  margin-top: 20rpx;
+  align-items: center;
+  border: 1rpx solid #f0f0f0;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+}
+.option-item-active{
+  border-color: #ff3300;
+  background-color: #ffe9cc;
+}
+.option-item .money text{
+  font-size: 50rpx;
+}
+.option-item .price{
+  padding-right: 20rpx;
+  text-decoration: line-through;
+}
+.main-tip{
+  padding: 20rpx 0 0 20rpx;
+  font-size: 26rpx;
+}
+.discount-box{
+  background-color: #fff;
+}
+.discount-money{
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0 30rpx;
+}
+.discount-icon{
+  width: 60rpx;
+  height: 60rpx;
+  padding: 0 20rpx;
+  margin-top: -5rpx;
+}
+.footer-tip{
+  font-size: 26rpx;
+  text-align: center;
+}
+.footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 96rpx;
+  line-height: 96rpx;
+  text-align: center;
+  background-color: #fff;
+}
+.pre-btn{
+  width: 120rpx;
+  height: 96rpx;
+  text-align: center;
+  font-size: 26rpx;
+  line-height: 30rpx;
+  border-right: 1rpx solid #f2f2f2;
+  background-color: #fff;
+}
+.pre-btn .icon{ 
+  width: 22rpx;
+  height: 32rpx;
+  padding-top: 15rpx;
+}
+.pay-txt{
+  width: 400rpx;
+}
+.pay-btn{
+  font-size: 40rpx;
+  line-height: 96rpx;
+  color: #fff;
+  background-color: #ff9900;
+}

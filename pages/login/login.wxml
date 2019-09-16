@@ -1,0 +1,25 @@
+<!--pages/login/login.wxml-->
+<view class='container'>
+  <image class='logo' src='../../img/icon-01.png'></image>
+  <image class='title-pic' src='../../img/u536.png'></image>
+  <form class='form' bindsubmit="handleLogin">
+    <view class='form-item flex'>
+      <input class='flex1' placeholder="手机号" name="mobile" value='{{mobile}}' />
+      <icon class='clear-icon' type="clear" size='20' bindtap='handleClear' data-type='mobile' />
+    </view>
+    <view class='form-item flex'>
+      <input class='flex1' placeholder="密码" name="password" value='{{password}}' />
+      <icon class='clear-icon' type="clear" size='20' bindtap='handleClear' data-type='password' />
+    </view>
+    <button class='btn' formType="submit">登录</button>
+    <view class='btn-tip'>
+      <navigator class='forget-btn' url="../forget/forget">忘记密码？</navigator>
+    </view>
+  </form>
+  <view class='footer'>
+    <text class='footer-title'>登录方式</text>
+    <view class='footer-icon-list'>
+      <image class='footer-icon' src='../../img/icon-wx.png'></image>
+    </view>
+  </view>
+</view>

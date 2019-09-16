@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "请输入车牌",
+  "usingComponents": {
+    "vehilce-panel": "../../../components/vehilcePanel/index"
+  }
+}

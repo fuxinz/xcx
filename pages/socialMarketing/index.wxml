@@ -1,0 +1,81 @@
+<!--pages/socialMarketing/index.wxml-->
+
+<view class='warp-content'>
+  <view class='header-con'>
+    <view class="nav {{ activeStatus==1 ? 'active': '' }}" bindtap='changeTab' data-status='1'>进行中</view>
+    <view class="nav {{ activeStatus==0 ? 'active': '' }}" bindtap='changeTab' data-status='0'>未进行</view>
+  </view>
+  <view class='tab-con'>
+    <view class='tab'>
+      <view class='item' wx:for='{{markList}}' wx:key='{{item.id}}'>
+        <view class='tc color-9'>{{item.addDate}}</view>
+        <view class='marketing-wrap bg-white'>
+          <view class='marketing-state' wx:if='{{item.status!=1}}'>{{item.status==0?'草稿':'关闭'}}</view>
+          <view class='marketing-pic'>
+            <image src='{{item.filepath}}' mode='aspectFill'></image>
+          </view>
+          <view class='marketing-title'>
+            <view class=''>{{item.exeName}}</view>
+            <view class='color-9'>活动时间：</view>
+            <view class='color-9'>{{item.activityStartTime}} - {{item.activityEndTime}} </view>
+          </view>
+          <view class='list-btn'>
+            <view class='btn border-color'
+              bindtap='handleShareVolume'
+              data-item='{{item}}'
+              wx:if='{{activeStatus==1}}'
+            >发券</view>
+            <view class='btn'
+              bindtap='handleAnalysis' 
+              data-id='{{item.id}}'
+              data-title='{{item.exeName}}'
+              data-start-time='{{item.activityStartTime}}'
+              data-end-time='{{item.activityEndTime}}'
+              wx:if='{{item.status!=0}}'
+            >活动分析</view>
+            <view class='btn' 
+              bindtap='handleEdit'
+              data-id='{{item.id}}'
+              wx:if='{{item.status==0}}'
+            >编辑</view>
+          </view>
+          <view class='tag-type tag-hui'>
+            <image wx:if='{{item.exeType==1}}' src='../../img/icon-hui.png'></image>
+            <image wx:if='{{item.exeType==2}}' src='../../img/icon-zhe.png'></image>
+            <image wx:if='{{item.exeType==3}}' src='../../img/icon-ci.png'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='footer-con'>
+    <view class='footer-nav'>
+      <navigator open-type="navigateBack">
+        <image class='back-icon' src='../../img/icon-left.png'></image>
+        <view>返回</view>
+      </navigator>
+    </view>
+    <view class='footer-nav'>
+      <navigator url='/pages/workspace/workspace' open-type="reLaunch">
+        <image class='home-icon' src='../../img/icon-home.png'></image>
+        <view>首页</view>
+      </navigator>
+    </view>
+    <view class='footer-nav add-btn {{useinfo.role == 2 ? "un-click" : ""}}' bindtap='createActivity'>
+      创建活动
+    </view>
+  </view>
+</view>
+<view class='action-mack' bindtap='actionSheetChange' wx:if='{{actionSheetHidden}}'>
+  <view class='action-sheet'>
+    <view class='action-sheet-item'>
+      <button class='action-sheet-button' bindtap='shareCustomer'>发券给客户</button>
+    </view>
+    <view class='action-sheet-item'>
+      <button class='action-sheet-button' open-type="share">发券给朋友</button>
+    </view>
+    <view class='action-sheet-cancel'>
+      <button class='action-sheet-button'>取消</button>
+    </view>
+  </view>
+</view>

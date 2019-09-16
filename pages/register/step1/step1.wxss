@@ -1,0 +1,74 @@
+/* pages/register/step1/step1.wxss */
+
+/* 
+.page-title{
+  height: 40rpx;
+  padding: 20rpx;
+}
+.user-avatar{
+  width: 144rpx;
+  height: 144rpx;
+  padding: 60rpx 0 10rpx;
+  border-radius: 50%;
+}
+.user-name{
+  height: 60rpx;
+  line-height: 60rpx;
+  padding-bottom: 30rpx;
+} */
+.logo{
+  width: 288rpx;
+  height: 288rpx;
+  padding: 40rpx 0 50rpx;
+}
+.form-item{
+  width: 570rpx;
+  height: 70rpx;
+  border-bottom: 1rpx solid #cccccc;
+  margin-bottom: 40rpx;
+}
+.form-item-switch{
+  align-items: center;
+  border-bottom: none;
+}
+.clear-icon{
+  padding-top: 10rpx;
+}
+.code-btn{
+  border: 1rpx solid #333333;
+  height: 50rpx;
+  line-height: 50rpx;
+  padding: 0 10rpx;
+}
+.btn-top-tip{
+  text-align: right;
+  color: #3399ff;
+  font-size: 30rpx;
+  padding-bottom: 30rpx;
+}
+.group-btn{
+  width: 570rpx;
+}
+.back-btn{
+  width: 180rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-right: 20rpx;
+  color: #fff;
+  background-color: #cccccc;
+}
+.btn{
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  color: #fff;
+  background-color: #3399ff;
+}
+.footer-tip{
+  padding-top: 20rpx;
+  font-size: 30rpx;
+  color: #999999;
+}
+.footer-tip text{
+  color: #4162ff;
+}

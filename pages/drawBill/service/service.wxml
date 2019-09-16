@@ -1,0 +1,26 @@
+<!--pages/drawBill/service/service.wxml-->
+<view class='section-list-wtap'>
+  <view class='section' wx:for-item="item1" wx:for-index="i" wx:for='{{serviceList}}' wx:key='{{item1.id}}'>
+    <view class='section-title'>{{item1.typeName}}</view>
+    <view class='service-list flex'>
+      <view class='service-item-wrap' wx:for-item="item2" wx:for-index="j" wx:for='{{item1.projectLibs}}' wx:key='{{item2.id}}'>
+        <view class='service-item {{item2.checked? "service-item-active": ""}}' 
+          bindtap='checkServiceItem' 
+          data-i='{{i}}' 
+          data-j='{{j}}'
+          data-item='{{item2}}'
+        >{{item2.projectName}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='footer flex'>
+  <navigator url="/pages/workspace/workspace" open-type="switchTab">
+    <view class='pre-btn'>
+      <image class='icon' src='../../../img/icon-home.png'></image>
+      <view>首页</view>
+    </view>
+  </navigator>
+  <view class='flex1 footer-tip'>已选择 <text style="color: #ff3300;">{{selectItems.length}}</text> 个项目</view>
+  <view class='last-btn' bindtap='handelConfirm'>确定</view>
+</view>

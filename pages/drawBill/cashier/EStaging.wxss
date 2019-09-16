@@ -1,0 +1,65 @@
+/* pages/drawBill/cashier/EStaging.wxss */
+
+page {
+  background-color: #ededed;
+}
+
+.heade {
+  width: 100%;
+  margin-top: 24rpx;
+  background-color: white;
+}
+
+.heade .list {
+  height: 125rpx;
+  padding: 0 39rpx;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #ededed;
+  align-items: center;
+}
+
+.select {
+  width: 250rpx;
+  height: 56rpx;
+  background: rgba(246, 246, 246, 1);
+  border-radius: 2rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 25rpx;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: rgba(120, 120, 120, 1);
+}
+.select view:nth-child(1){
+  margin-left: 33rpx
+}
+.icon {
+  width: 0px;
+  height: 0px;
+  margin-right: 17rpx;
+  border-top: 13rpx solid #1c1c1c;
+  border-left: 9rpx solid transparent;
+  border-right: 9rpx solid transparent;
+}
+
+.title text:nth-child(2) {
+  font-family: Microsoft YaHei;
+  font-weight: 600;
+  color: #1c1c1c;
+}
+
+.next_btn {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 96rpx;
+  background: linear-gradient(-90deg, rgba(255, 160, 0, 1), rgba(255, 202, 0, 1));
+  font-size: 37rpx;
+  font-family: Source Han Sans SC;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 1);
+  line-height: 96rpx;
+  text-align: center;
+}

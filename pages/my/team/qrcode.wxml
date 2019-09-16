@@ -1,0 +1,10 @@
+<view class='main'>
+  <view class='main-header'>车云小二</view>
+  <view class='qrcode-wrap'>
+   <!-- <canvas class='qrcode' canvas-id="myQrcode"></canvas> -->
+   <image class='qrcode' src='data:image/png;base64,{{src2}}'></image>
+  </view>
+  <view class='main-footer'>
+    <view>扫码进团队</view>
+  </view>
+</view>

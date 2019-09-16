@@ -1,0 +1,79 @@
+.bill-item-header{
+  padding: 15rpx 30rpx;
+  border-top: 1rpx solid #ededed;
+  border-bottom: 1rpx solid #ededed;
+}
+.car-icon{
+  width:48rpx;
+  height: 48rpx;
+  padding-right: 20rpx;
+}
+.bill-item-header_center{
+  font-size: 24rpx;
+  color: #999999;
+}
+.license-plate{
+  font-size: 30rpx;
+  color: #333;
+}
+.bill-item-main{
+  font-size: 26rpx;
+}
+.service-item{
+  padding-left: 95rpx;
+}
+.service-item-header{
+  height: 80rpx;
+  line-height: 80rpx;
+  padding-left: 30rpx;
+  position: relative;
+  border-bottom: 1rpx solid #ededed;
+}
+.service-item-header::before{
+  content: '';
+  width: 6rpx;
+  height: 40rpx;
+  background-color: #ff9900;
+  position: absolute;
+  left: 0;
+  top: 20rpx;
+}
+.service-item-content{
+  background-color: #f8f8f8;
+  padding: 0 30rpx;
+  color: #999999;
+}
+.content-item{
+  padding: 15rpx 0;
+}
+.service-item-footer{
+  height: 80rpx;
+  line-height: 80rpx;
+  border-top: 1rpx solid #ededed;
+  padding: 0 30rpx;
+  text-align: right;
+}
+
+
+.bill-item-footer{
+  padding: 15rpx 30rpx;
+  border-top: 1rpx solid #ededed;
+  text-align: right;
+}
+.bill-btn{
+  width: 156rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  padding: 0;
+  display: inline-block;
+  margin-left: 10rpx;
+  background-color: #fff;
+  color: #333;
+}
+.bill-confirm-btn{
+  color: #ff3300;
+}
+.bill-confirm-btn::after {
+  border: 1rpx solid #ff3300;
+}

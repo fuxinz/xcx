@@ -1,0 +1,143 @@
+page{
+  background-color: #f4f5f6;
+  box-sizing: border-box;
+  font-size: 28rpx;
+}
+.header{
+  padding: 20rpx 30rpx;
+  background-color: #FFFFFF;
+  border-top: 1rpx solid #f4f5f6;
+  border-bottom: 1rpx solid #f4f5f6;
+}
+.search-con{
+  width: 100%;
+  height: 60rpx;
+  position: relative;
+  border-radius: 10rpx;
+  background-color: #f4f5f6;
+}
+.search-con>input{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 26rpx;
+}
+.search-con>image{
+  width: 38rpx;
+  height: 38rpx;
+  position:absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 30rpx;
+}
+.customer-list{
+  padding-bottom: 100rpx;
+}
+.customer-setion-title{
+  height: 60rpx;
+  line-height: 60rpx;
+  padding: 0 30rpx;
+}
+.customer-item{
+  background-color: #FFFFFF;
+}
+
+/*checkbox---->*/
+checkbox{
+  width: 40rpx;
+  height: 40rpx;
+}
+checkbox .wx-checkbox-input {
+  border-radius: 50%;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  border: 1rpx solid #0c0;
+  background: #0c0;
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  border-radius: 50%;
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #fff;
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+/*<---checkbox*/
+
+.checkbox-wrap{
+  padding: 40rpx 30rpx;
+}
+.customer-item{
+  border-bottom: 1rpx solid #f4f5f6;
+}
+.customer-name{
+  font-size: 34rpx;
+  padding-top: 15rpx;
+}
+.customer-info{
+  padding-top: 10rpx;
+  color: #9999b3;
+}
+
+.footer-con{
+  display: flex;
+  background-color: #FFFFFF;
+  border-top: 1rpx solid #e4e4e4;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-size: 24rpx;
+  align-items: stretch
+}
+.footer-nav{
+  width: 120rpx;
+  height: 100%;
+  text-align: center;
+}
+.footer-nav{
+  padding-top: 10rpx;
+  padding-bottom: 10rpx
+}
+.footer-con>view:first-child{
+  border-right: 1rpx solid #e4e4e4
+}
+.footer-con>view:nth-child(2){
+  border-right: 1rpx solid #e4e4e4
+}
+.back-icon{
+  width: 18rpx;
+  height: 38rpx;
+}
+.home-icon{
+  width: 48rpx;
+  height: 38rpx;
+}
+.footer-con>.flex1{
+  font-size: 28rpx;
+  text-align: center;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+}
+.add-btn{
+  color:#FFFFFF;
+  background-color: #f30;
+  font-size: 34rpx;
+  text-align: center;
+  width: 180rpx;
+  height: auto;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+}

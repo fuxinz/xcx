@@ -1,0 +1,20 @@
+<!--pages/qztRegister/qztAuthIng.wxml-->
+<view class='container'>
+  <view class='tip-wrap'>
+    <view class='tip-header flex'>
+      <icon type="info" size="40" color="#ff6b39" />
+      <text> {{qztUserState=='AUTH_ING'? '审核中，请等待！' : '认证失败，请重新提交！'}}</text>
+    </view>
+    <image class='tip-img' src='../../img/wait_png.png'></image>
+    <view class='tip-footer'>
+      <view>如果您对我们的服务有任何疑问</view>
+      <view>请垂咨客服热线<text style='color: #ff6b39'>400-023-9555</text></view>
+    </view>
+  </view>
+  <view class='reason-tip' wx:if='{{txt && qztUserState!="AUTH_ING"}}'>{{'认证失败原因:'+ txt}}</view>
+  <button wx:if="{{qztUserState!='AUTH_ING'}}" class='btn' bindtap='jumpPage'>重新提交</button>
+  <view class='footer'>
+    <view>重庆市渝中区八一路1号帝都大厦B塔10楼</view>
+    <view>电话：400-023-9555 | 传真：023-68809333</view>
+  </view>
+</view>

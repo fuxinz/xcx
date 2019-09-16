@@ -1,0 +1,95 @@
+<!--pages/drawBill/input/input.wxml-->
+<form bindsubmit="handleSubmit">
+  <view class='header-title flex'>
+    <image class='header-title-icon' src='../../../img/farendaibiao.png'></image>
+    <text class='flex1'>法人信息</text>
+  </view>
+  <view class='form-wrap'>
+    <view class='form-item flex'>
+      <view class='form-item-title {{type!="quick"?"must-fill-title":""}}'>车主姓名</view>
+      <input class='flex1' placeholder="请填写" name='clientName' value='{{orderDto.customerName}}' />
+      <text class='form-item-tip'>（先生/女士）</text>
+    </view>
+    <view class='form-item flex'>
+      <view class='form-item-title {{type!="quick"?"must-fill-title":""}}'>车主号码</view>
+      <input class='flex1' placeholder="请填写" name='tel' value='{{ orderDto.tel}}' bindblur='changeTelAction'/>
+    </view>
+    <view class='form-item flex'>
+      <view class='form-item-title'> 订单备注 </view>
+      <textarea class='form-item-textarea flex1' placeholder="请填写（非必填项）" name='orderRemark' />
+    </view>
+  </view>
+  <view wx:if="{{type!='quick'}}">
+    <view class='header-title flex'>
+      <image class='header-title-icon' src='../../../img/icon-car.png'></image>
+      <text class='flex1'>车辆信息</text>
+    </view>
+    <view class='form-wrap' >
+      <view class='form-item flex'>
+        <view class='form-item-title must-fill-title'>车牌号码</view>
+        <input class='flex1' placeholder="" name='licenceNo' value='{{orderDto.licenceNo}}' disabled />
+      </view>
+      <view class='form-item flex'>
+        <view class='form-item-title'>进厂里程</view>
+        <input class='flex1' placeholder="请填写" type='number' name='mileage' value='{{orderDto.mileage}}'/>
+        <text>km</text>
+      </view>
+      <!-- <view class='form-item flex'>
+        <view class='form-item-title must-fill-title'>上次保养</view>
+        <picker class='form-item-picker flex1' mode="date" name='reserveTime'>
+          <view class='txt'>请选择</view>
+        </picker>
+      </view> -->
+      <view class='form-item flex'>
+        <view class='form-item-title'>车主偏好</view>
+        <textarea class='form-item-textarea flex1' placeholder="请填写（非必填项）" name='remark' value='{{orderDto.remark}}' />
+      </view>
+      
+    </view>
+  </view>
+  <view class='header-title flex'>
+    <image class='header-title-icon' src='../../../img/farendaibiao.png'></image>
+    <text class='flex1'>促销信息</text>
+  </view>
+  <view class='form-wrap'>
+    <picker bindchange="pickerCouponChange" value="{{index}}" range="{{couponList}}" disabled='{{couponList<=0}}' range-key='exe_name'>
+      <view class='form-item flex'>
+        <view class='form-item-title'>优惠券</view>
+          <view class='flex1' style='color: #ff3300;'> {{activeCoupon.exe_name || '暂无优惠劵'}}</view>
+      </view>
+    </picker>
+    <view wx:if="{{type==''}}">
+      <view class='form-item flex has-switch'>
+        <view class='flex1'>
+          <view class='form-item-title'>是否转商机</view>
+          <text class='form-bottom-tip'> ( 转商机订单可在商机管理查询）</text>
+        </view>
+        <switch checked='{{isBusiness}}' bindchange="handleSwitchChange"/>
+      </view>
+      <view class='form-item flex'>
+        <view class='form-item-title'>预约时间</view>
+        <picker class='form-item-picker flex1' 
+          mode="date"
+          name='reserveTime'
+          bindchange="handleChangeReserveTime"
+          start='{{startTime}}'
+        >
+          <view class='txt'>{{customer.reserveTime||'请选择'}}</view>
+        </picker>
+      </view>
+    </view>
+  </view>
+  <view class='footer flex'>
+    <navigator url="/pages/workspace/workspace" open-type="switchTab">
+      <view class='pre-btn'>
+        <image class='icon' src='../../../img/icon-home.png'></image>
+        <view>首页</view>
+      </view>
+    </navigator>
+    <view class='flex1 footer-tip'>
+      <view><text class='red'>{{projectsNum||'0'}} </text> 个项目合计： <text class='red'>￥{{orderDto.amount || '0'}}</text></view>
+      <text class='footer-tip_txt'>(不含安装费）</text>
+    </view>
+    <button class='last-btn' formType="submit">保存</button>
+  </view>
+</form>

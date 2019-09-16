@@ -1,0 +1,7 @@
+<!--pages/drawBill/cashier/success.wxml-->
+<view class='container'>
+  <image class='logo' src='../../../img/icon-success.png'></image>
+  <view class='state'>支付成功</view>
+  <text class='gray'>支付成功，{{time}}秒后自动跳转工作站</text>
+  <button class='btn' bindtap='jumpPage'>完成</button>
+</view>

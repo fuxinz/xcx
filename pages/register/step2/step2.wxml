@@ -1,0 +1,30 @@
+<!--pages/register/step2/step2.wxml-->
+<image class='page-bg' src='../../../img/bg.png'></image>
+<view class='container'>
+  <text class='header-tip'>你是？</text>
+  <view class='check-wrap'>
+  
+    <view class='check-item  {{role==1? "check-item-active": ""}}' bindtap='handleChangeRole' data-role='1'>
+      <view class='check-item-title'>门店老板</view>
+      <text>门店经营更轻松，销售管理更方便</text>
+      <view class='check-item-icon'>
+        <icon type="success_no_circle" size="20" color="#fff" />
+      </view>
+    </view>
+    <view class='check-item {{role==2? "check-item-active": ""}}'  bindtap='handleChangeRole' data-role='2'>
+      <view class='check-item-title'>门店员工</view>
+      <text>开单收银更便捷，客户关系更稳定</text>
+      <view class='check-item-icon'>
+        <icon type="success_no_circle" size="20" color="#fff" />
+      </view>
+    </view>
+  </view>
+  <view class='group-btn flex'>
+    <button class='btn' wx:if='{{method==3}}' bindtap='handleNext'>下一步</button>
+    <button class='btn' wx:else open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">下一步</button>
+  </view>
+  <view class='footer-tip'>
+    <view>请根据你具体的情况，选择对应角色；</view>
+    <view>角色一旦选择不可更改，请谨慎操作。</view>
+  </view>
+</view>

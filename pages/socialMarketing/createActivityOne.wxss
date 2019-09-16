@@ -1,0 +1,148 @@
+/* pages/socialMarketing/createActivityOne.wxss */
+page{
+  background-color: #f4f5f6;
+  box-sizing: border-box
+}
+.warp-content{
+  height: 100%;
+  background-color: #f4f5f6;
+  overflow: scroll;
+  padding-bottom: 98rpx;
+  padding-top: 20rpx;
+  padding-left: 24rpx;
+  padding-right: 24rpx;
+}
+.active-item{
+  position: relative;
+  width: 100%;
+  height: 300rpx;
+  /* padding: 42rpx 42rpx; */
+  border-radius: 14rpx;
+  overflow: hidden;
+  margin-bottom: 27rpx;
+}
+.bg{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: .6;
+}
+.bg image{
+    display: block;
+    width: 100%;
+    height: 100%
+}
+.active-title {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    font-size: 36rpx;
+    height: 67rpx;
+    line-height: 45rpx;
+    margin-top: 120rpx;
+    /* margin-bottom: 20rpx; */
+    padding: 0 20rpx
+}
+.tag-type {
+    position: absolute;
+    top: 0;
+    left: 28rpx;
+    width: 82rpx;
+    height: 88rpx;
+}
+.tag-type image{
+  width: 100%;
+  height: 100%
+}
+.active-bottom{
+  padding: 0 20rpx;
+  font-size: 24rpx;
+}
+/*checkbox---->*/
+checkbox{
+  width: 40rpx;
+  height: 40rpx;
+}
+checkbox .wx-checkbox-input {
+  border-radius: 50%;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  border: 1rpx solid #0c0;
+  background: #0c0;
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  border-radius: 50%;
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #fff;
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+/*<---checkbox*/
+.footer-con{
+  display: flex;
+  background-color: #FFFFFF;
+  border-top: 1rpx solid #e4e4e4;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-size: 24rpx;
+  align-items: stretch
+}
+.active-item-btn{
+  position: absolute;
+  right: 30rpx;
+  bottom: 50rpx;
+  width: 160rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  border-radius: 20rpx;
+  background-color: rgba(255 , 255, 255, .8);
+  font-size: 26rpx;
+  color: #333;
+}
+.footer-nav{
+  width: 20%;
+  height: 100%;
+  text-align: center;
+}
+.footer-nav{
+  padding-top: 10rpx;
+  padding-bottom: 10rpx
+}
+.footer-con>view:first-child{
+  border-right: 1rpx solid #e4e4e4
+}
+.back-icon{
+  width: 18rpx;
+  height: 38rpx;
+}
+.home-icon{
+  width: 48rpx;
+  height: 38rpx;
+}
+.add-btn{
+  color:#FFFFFF;
+  background-color: #f30;
+  font-size: 34rpx;
+  text-align: center;
+  width: 60%;
+  height: auto;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+}

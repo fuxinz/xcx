@@ -1,0 +1,22 @@
+<!--pages/my/personal/personal.wxml-->
+<view class='list'>
+  <view class='list-item flex'>
+    <text class='flex1'>头像</text>
+    <view class='user-avatar-wrap'>
+      <open-data class="user-avatar" type="userAvatarUrl"></open-data>
+      <!-- <image class="user-avatar" src='{{headimgurl}}'></image> -->
+    </view>
+  </view>
+  <view class='list-item flex'>
+    <text class='flex1'>姓名</text>
+    <!-- <open-data class='user-name' type="userNickName" lang="zh_CN"></open-data> -->
+    <!-- <text>{{useinfo.nick}}</text>-->
+    <input class='flex1' placeholder='请输入' value='{{name}}' bindinput='bindInput' data-type='name' style='text-align: right;' />
+  </view>
+  <view class='list-item flex'>
+    <text class='flex1'>手机</text>
+    <input class='flex1' placeholder='请输入' type='number' value='{{mobile}}' bindinput='bindInput' data-type='mobile' style='text-align: right;' />
+  </view>
+
+   <button class='btn' bindtap='handleSubmit'>保存</button>
+</view>

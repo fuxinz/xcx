@@ -1,0 +1,106 @@
+/* pages/drawBill/vehicleOwner/index.wxss */
+page{
+  background-color: #ededed;
+  font-size: 30rpx;
+}
+.header{
+  background-color: #fff;
+  padding: 0 30rpx;
+}
+.header-top{
+  border-bottom: 1rpx solid #f2f2f2;
+  padding-bottom: 15rpx;
+}
+.header-top_icon{
+  width: 64rpx;
+  height: 64rpx;
+  padding-right: 20rpx;
+}
+
+.header-preference-title{
+  width: 600rpx;
+}
+.vehicle-owner{
+  font-size: 26rpx;
+  color: #999;
+}
+.vehicle-name{
+  color: #999;
+  font-size: 26rpx;
+}
+
+.header-bottom{
+  font-size: 28rpx;
+  padding: 15rpx 0;
+}
+.header-preference-title{
+  width: 600rpx;
+  color: #999;
+}
+
+.list-title{
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-weight: bold;
+  position: relative;
+}
+.list-title::before{
+  content: '';
+  width: 250rpx;
+  height: 1rpx;
+  position: absolute;
+  left: 30rpx;
+  top: 50rpx;
+  background-color: #ccc;
+}
+.list-title::after{
+  content: '';
+  width: 250rpx;
+  height: 1rpx;
+  position: absolute;
+  right: 30rpx;
+  top: 50rpx;
+  background-color: #ccc;
+}
+
+.empty-pic{
+  width: 256rpx;
+  height: 300rpx;
+  display: block;
+  margin: 30rpx auto;
+}
+
+.footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 96rpx;
+  background-color: #fff;
+  border-top: 1rpx solid #f2f2f2;
+}
+.footer-tip{
+  padding: 0 30rpx;
+  text-align: right;
+  line-height: 96rpx;
+}
+.pre-btn{
+  width: 120rpx;
+  height: 96rpx;
+  text-align: center;
+  font-size: 26rpx;
+  border-right: 1rpx solid #f2f2f2;
+}
+.pre-btn .icon{ 
+  width: 32rpx;
+  height: 32rpx;
+  padding-top: 15rpx;
+}
+.last-btn{
+  width: 180rpx;
+  text-align: center;
+  background-color: #ff3300;
+  color: #fff;
+  line-height: 96rpx;
+}

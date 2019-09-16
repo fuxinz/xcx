@@ -1,0 +1,32 @@
+<wxs src="../busness.wxs" module="busness" />
+
+<view class='bill-item-header flex'>
+  <image class='car-icon' src='{{orderInfo.vehicleInfo && orderInfo.vehicleInfo.brandIco ||"../../../img/icon-wx.png"}}'></image>
+  <view class='bill-item-header_center flex1'>
+    <view>
+      <text class='license-plate'>{{orderInfo.licenceNo}}</text>
+      <text >（{{orderInfo.clientName}}）</text>
+    </view>
+    <text>预约时间：{{orderInfo.reserveTime}}</text>
+  </view>
+  <text style='color: #ff6600;'>{{busness.returnBusTxt(orderDetail.status)}}</text>
+</view>
+<view class='bill-item-main'>
+  <view class='service-item' wx:for='{{orderInfo.projects || []}}' wx:key='{{item1.id}}' wx:for-item="item1" wx:for-index="i">
+    <view class='service-item-header'>{{item1.projectName}}</view>
+    <view class='service-item-content'>
+      <view class='content-item flex' wx:for='{{item1.products}}' wx:key='{{item2.id}}'  wx:for-item="item2" wx:for-index="j">
+        <text class='flex1'>{{item2.productName}}</text>
+        <text>￥{{item2.price}}  x {{item2.saleNum}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='service-item-footer'>
+    <text>共计{{orderInfo.projects && orderInfo.projects.length}}项服务 </text> <text> 合计:￥{{orderInfo.totalAmount}}</text>
+  </view>
+</view>
+<view class='bill-item-footer' wx:if='{{orderInfo.orderOpStatus!=4}}'>
+  <button class='bill-btn' bindtap='handleBusiClosed'>关闭商机</button>
+  <button class='bill-btn' bindtap='showActionSheet'>回访操作</button>
+  <button class='bill-btn bill-confirm-btn' bindtap='handleTurn'>转开单</button>
+</view>

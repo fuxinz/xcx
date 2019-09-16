@@ -1,0 +1,29 @@
+<!--pages/drawBill/vehicleOwner/index.wxml-->
+<view>
+  <view class='header'>
+    <view class='header-top flex'>
+      <image class='header-top_icon' src='../../../img/icon-wx.png'></image>
+      <view class='header-vehicle-info'>
+        <view class='header-title'>鄂A · 10HD9 <text class='vehicle-owner'>（刘远）</text></view>
+        <text class='vehicle-name'>本田CR-V 2015款 2.0L两驱风尚版</text>
+      </view>
+    </view>
+    <view class='header-bottom flex'>
+      <view class='header-preference-title'>客户偏好</view>
+      <text class='header-preference-txt'>已在本店做过两次保养，对“美孚”机油认可度较高，平均每周到店洗车一次，言辞少，对车内饰产品比较感兴趣，对优惠折扣等活动参与热情高；</text>
+    </view>
+  </view>
+  <view class='list'>
+    <view class='list-title'>商机提醒</view>
+    <image class='empty-pic' src='../../../img/icon-business-none.png'></image>
+  </view>
+</view>
+
+<view class='footer flex'>
+  <view class='pre-btn'>
+    <image class='icon' src='../../../img/icon-home.png'></image>
+    <view>首页</view>
+  </view>
+  <view class='flex1 footer-tip'>已选择 <text style="color: #ff3300;">5</text> 个项目</view>
+  <view class='last-btn' bindtap='handelConfirm'>确定</view>
+</view>

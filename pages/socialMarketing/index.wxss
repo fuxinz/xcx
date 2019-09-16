@@ -1,0 +1,187 @@
+/* pages/socialMarketing/index.wxss */
+page{
+  height: 100%;
+  background-color: #f4f5f6;
+}
+.warp-content{
+  overflow: scroll;
+  padding-bottom: 98rpx;
+  padding-top: 70rpx;
+}
+.header-con{
+  display: flex;
+  height: 70rpx;
+  background-color: #FFFFFF;
+  font-size: 28rpx;
+  justify-content: space-around;
+  padding-bottom: 6rpx;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100
+}
+.nav{
+  text-align: center;
+  color: #999999;
+  height: 100%;
+  line-height: 70rpx
+}
+.nav.active{
+  color: #4162ff;
+  border-bottom: 6rpx solid #4162ff
+}
+.tab{
+  padding: 10rpx 20rpx;
+}
+.color-9 {
+    color: #999 !important;
+}
+.tc {
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 24rpx;
+}
+.bg-white {
+    background-color: #fff;
+}
+.marketing-wrap {
+  position: relative;
+}
+.marketing-pic {
+  height: 300rpx;
+}
+.marketing-state{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -90rpx;
+  margin-top: -90rpx;
+  width: 180rpx;
+  height: 180rpx;
+  line-height: 180rpx;
+  border-radius: 90rpx;
+  background-color: rgba(0, 0, 0, .8);
+  color: #FFFFFF;
+  font-size: 40rpx;
+  text-align: center;
+}
+.marketing-pic image {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.marketing-title {
+    padding: 20rpx 20rpx;
+    font-size: 26rpx;
+    background-color: #FFFFFF;
+    border-bottom: 1rpx solid #dfdfdf
+}
+.list-btn {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20rpx;
+    background-color: #FFFFFF
+}
+.btn{
+  padding: 10rpx 20rpx;
+  font-size: 24rpx;
+  border: 1rpx solid #dfdfdf;
+  border-radius: 6rpx;
+}
+.border-color{
+  border-color: #f30;
+  color: #f30;
+  margin-right: 20rpx
+}
+.tag-type {
+    position: absolute;
+    top: 0;
+    left: 28rpx;
+    width: 82rpx;
+    height: 88rpx;
+}
+.tag-type image{
+  width: 100%;
+  height: 100%
+}
+.footer-con{
+  display: flex;
+  background-color: #FFFFFF;
+  border-top: 1rpx solid #e4e4e4;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-size: 24rpx;
+  align-items: stretch
+}
+.footer-nav{
+  width: 20%;
+  height: 100%;
+  text-align: center;
+}
+.footer-nav{
+  padding-top: 10rpx;
+  padding-bottom: 10rpx
+}
+.footer-con>view:first-child{
+  border-right: 1rpx solid #e4e4e4
+}
+.back-icon{
+  width: 18rpx;
+  height: 38rpx;
+}
+.home-icon{
+  width: 48rpx;
+  height: 38rpx;
+}
+.add-btn{
+  color:#FFFFFF;
+  background-color: #f30;
+  font-size: 34rpx;
+  text-align: center;
+  width: 60%;
+  height: auto;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+}
+
+.action-mack{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, .4);
+}
+.action-sheet{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #f4f5f6;
+  font-size: 30rpx;
+}
+.action-sheet-item,.action-sheet-cancel{
+  background-color: #fff;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 1rpx solid #f4f5f6;
+  text-align: center
+}
+.action-sheet-cancel{
+  margin-top: 20rpx;
+}
+.action-sheet-button{
+  background-color: #fff;
+  font-size: 30rpx;
+}
+.action-sheet-button::after{
+  border: none;
+}
+.un-click{
+  background-color: #e4e4e4
+}

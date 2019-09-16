@@ -1,0 +1,74 @@
+/* pages/login/login.wxss */
+.logo{
+  width: 240rpx;
+  height: 240rpx;
+  padding: 30rpx 0 20rpx;
+}
+.title-pic{
+  width: 320rpx;
+  height: 68rpx;
+  padding-bottom: 70rpx;
+}
+
+.form-item{
+  width: 570rpx;
+  height: 70rpx;
+  border-bottom: 1rpx solid #cccccc;
+  margin-bottom: 40rpx;
+}
+.clear-icon{
+  padding-top: 10rpx;
+}
+.btn{
+  width: 570rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  color: #fff;
+  background-color: #3399ff;
+  margin-top: 40rpx;
+}
+.btn-tip{
+  width: 570rpx;
+  color: #999999;
+  font-size: 32rpx;
+}
+.forget-btn{
+  width: 160rpx;
+  margin: 40rpx 0 130rpx;
+}
+
+.footer{
+  text-align: center;
+}
+.footer-title{
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 32rpx;
+  color: #cccccc;
+  position: relative
+}
+.footer-title::after{
+  content: '';
+  position: absolute;
+  left: -210rpx;
+  top: 20rpx;
+  width: 200rpx;
+  height: 1rpx;
+  background-color: #cccccc; 
+}
+.footer-title::before{
+  content: '';
+  position: absolute;
+  right: -210rpx;
+  top: 20rpx;
+  width: 200rpx;
+  height: 1rpx;
+  background-color: #cccccc; 
+}
+
+.footer-icon{
+  width: 96rpx;
+  height: 96rpx;
+  padding: 20rpx;
+}

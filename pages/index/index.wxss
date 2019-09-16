@@ -1,0 +1,58 @@
+/**index.wxss**/
+.logo{
+  width: 400rpx;
+  height: 400rpx;
+}
+.login-title{
+  padding: 30rpx 0 120rpx;
+}
+.btn{
+  width: 570rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-radius: 50rpx;
+  color: #fff;
+  font-size: 32rpx;
+  margin-bottom: 40rpx;
+}
+.btn1{
+  background: linear-gradient(135deg, rgba(255, 204, 0, 1) 0%, rgba(255, 153, 0, 1) 100%);
+}
+.btn2{
+  background-color: #00c26d;
+}
+
+.footer{
+  text-align: center;
+}
+.footer-title{
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 32rpx;
+  color: #cccccc;
+  position: relative
+}
+.footer-title::after{
+  content: '';
+  position: absolute;
+  left: -210rpx;
+  top: 20rpx;
+  width: 200rpx;
+  height: 1rpx;
+  background-color: #cccccc; 
+}
+.footer-title::before{
+  content: '';
+  position: absolute;
+  right: -210rpx;
+  top: 20rpx;
+  width: 200rpx;
+  height: 1rpx;
+  background-color: #cccccc; 
+}
+
+.footer-icon{
+  width: 96rpx;
+  height: 96rpx;
+  padding: 20rpx;
+}

@@ -1,0 +1,39 @@
+<view class='header'>
+  <view class='search-con'>
+    <input placeholder='搜索' type='text' confirm-type='search' bindconfirm='confimSearch'></input>
+    <image src='../../img/icon-search.png'></image>
+  </view>
+</view>
+<view class='customer-list'>
+  <!-- <view class='customer-setion-title'>B</view> -->
+  <checkbox-group bindchange="checkboxChange">
+  <label wx:for='{{customerList}}' wx:key='{{item.id}}'>
+    <view class='customer-item flex'>
+      <view class='checkbox-wrap'><checkbox value='{{item.id}}'/></view>
+      <view class='flex1'>
+        <view class='customer-name'>{{item.name}}</view>
+        <view class='customer-info'>{{item.phone}}</view>
+      </view>
+    </view>
+  </label>
+  </checkbox-group>
+</view>
+
+<view class='footer-con flex'>
+  <view class='footer-nav'>
+    <navigator open-type="navigateBack">
+      <image class='back-icon' src='../../img/icon-left.png'></image>
+      <view>返回</view>
+    </navigator>
+  </view>
+  <view class='footer-nav'>
+    <navigator url='/pages/workspace/workspace' open-type="reLaunch">
+      <image class='home-icon' src='../../img/icon-home.png'></image>
+      <view>首页</view>
+    </navigator>
+  </view>
+  <view class='flex1'>已选择 <text style='color: #f30;'>{{selectIds.length}}</text> 名客户</view>
+  <view class='footer-nav add-btn' bindtap='confirmAction'>
+    确认发券
+  </view>
+</view>

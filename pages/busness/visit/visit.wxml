@@ -1,0 +1,13 @@
+
+<view class='visit-list'>
+  <view class='visit-item' wx:for='{{recordList}}' wx:key='{{item.id}}'>
+    <view class='visit-item-header'>
+      <view class='visit-item-title'>{{item.formatmsg}}</view>
+      <text class='gray'>记录时间：{{item.addDate}}</text>
+    </view>
+    <view class='visit-item-main'>
+      {{item.context}}
+    </view>
+    <view class='visit-item-footer'>预约时间：{{item.backtime}}</view>
+  </view>
+</view>

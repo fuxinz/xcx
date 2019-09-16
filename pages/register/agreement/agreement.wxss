@@ -1,0 +1,7 @@
+/* pages/register/agreement/agreement.wxss */
+page{
+  font-size: 30rpx;
+}
+.txt-wrap{
+  padding: 0 30rpx;
+}

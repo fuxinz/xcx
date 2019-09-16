@@ -1,0 +1,75 @@
+/* pages/qztRegister/qztRegister1.wxss */
+page{
+  background-color: #f8f8f8;
+  font-size: 28rpx;
+}
+.header-title{
+  height: 80rpx;
+  align-items: center;
+  padding: 0 30rpx;
+  color: #b3b3b3;
+}
+.header-title-icon{
+  width: 40rpx;
+  height: 40rpx;
+  padding-right: 30rpx;
+}
+.form-wrap{
+  padding: 0 10rpx;
+  background-color: #fff;
+}
+.form-item{
+  min-height: 90rpx;
+  border-bottom: 1rpx solid #f8f8f8;
+  align-items: center;
+}
+.form-item:last-child{
+  border: none;
+}
+.form-item-title{
+  width: 230rpx;
+  padding-left: 15rpx;
+  line-height: 90rpx;
+}
+.form-item-title::before{
+  content: ' * ';
+  color: red;
+}
+.form-item input{
+  height: 90rpx;
+}
+.form-item-textarea{
+  height: 70rpx;
+  padding: 10rpx 0;
+}
+.picker-area{
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+.phone-btn{
+  padding: 0;
+  margin: 0;
+  border-color: #fff;
+  background-color: #fff;
+  font-size: 30rpx;
+  text-align: left;
+  color: #999999;
+}
+.phone-btn::after {
+  border: 0;
+}
+.code-btn{
+  border: 1rpx solid #333333;
+  height: 50rpx;
+  line-height: 50rpx;
+  padding: 0 10rpx;
+}
+.btn{
+  width: 690rpx;
+  height: 80rpx;
+  margin: 40rpx auto;
+  background-color: #ff9900;
+  color: #fff;
+  font-size: 32rpx;
+}

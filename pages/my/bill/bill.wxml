@@ -1,0 +1,45 @@
+
+<view class='header flex'>
+  <view class='flex1 {{activeStatus==item.status? "active": ""}}'
+    wx:for="{{tabList}}"
+    wx:key="{{index}}"
+    data-status='{{item.status}}'
+    bindtap='changeTab'>{{item.txt}}</view>
+</view>
+
+<view class='bill-list'>
+  <view class='not-data' wx:if="{{orderList.length<=0}}">暂无开单，快去开单!</view>
+  <view class='bill-item' wx:for='{{orderList}}' wx:for-item="item1" wx:for-index="i" wx:key="{{item1.id}}">
+    <view class='bill-item-header flex'>
+      <image class='car-icon' src='../../../img/icon-car.png'></image>
+      <view class='bill-item-header_center flex1'>
+        <view>
+          <text class='license-plate'>{{item1.licenceNo || item1.saleNo}} <text class='gray' wx:if='{{item1.clientName}}'>({{item1.clientName}})</text></text>
+          <text wx:if="{{item1.customerName}}">（{{item1.customerName }}）</text>
+        </view>
+        <text>{{item1.saleDate}}</text>
+      </view>
+      <!-- <text style='color: #ff6600;'>未完成</text> -->
+    </view>
+    <view class='bill-item-main'>
+      <view class='service-item' wx:for='{{item1.projects}}' wx:for-item="item2" wx:for-index='j' wx:key="{{item2.id}}">
+        <view class='service-item-header'>{{item2.projectName}}</view>
+        <view class='service-item-content'>
+          <view class='content-item flex' wx:for='{{item2.products}}' wx:for-item="item3" wx:for-index='z' wx:key="{{item3.id}}">
+            <text class='flex1'>{{item3.productName || item3.projectName}}</text>
+            <text>￥{{item3.price}} x {{item3.saleNum}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='service-item-footer'>
+        <text>共计{{item1.projects.length}}项服务 </text> 
+        合计:<text style='text-decoration:line-through;' wx:if='{{item1.totalAmount>item1.amount}}'> ￥{{item1.totalAmount}} </text> 
+        <text class='red'> ￥{{item1.amount}}</text>
+      </view>
+    </view>
+    <view class='bill-item-footer' wx:if="{{activeStatus==1}}">
+      <button class='bill-btn' bindtap='handleCancel' data-id='{{item1.id}}' data-i='{{i}}'>取消开单</button>
+      <button class='bill-btn bill-confirm-btn' bindtap='handleReceivable' data-id='{{item1.id}}' data-amount='{{item1.amount}}'>收款</button>
+    </view>
+  </view>
+</view>

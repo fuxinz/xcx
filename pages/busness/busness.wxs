@@ -1,0 +1,20 @@
+
+//1：未完成，2：已完成，4：已关闭，3：商机提醒。
+var returnBusTxt = function (state) {
+  switch (state){
+    case '1':
+      return '未完成';
+    case '2':
+      return '已完成';
+    case '3':
+      return '本月服务提醒';
+    case '4':
+      return '已关闭';
+    default:
+      return ' ';
+  }
+}
+
+module.exports = {
+  returnBusTxt: returnBusTxt
+}

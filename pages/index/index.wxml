@@ -1,0 +1,17 @@
+<!--index.wxml-->
+<view class='container'>
+  <image class='logo' src='../../img/icon-01.png'></image>
+  <text class='login-title'>数据让汽车服务更高效</text>
+  
+  <button class='btn btn1' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo='getUserInfo' data-action='phone'>手机号登录</button>
+  <button class='btn btn2' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo='getUserInfo' data-action='wx'>微信登录</button>
+  <text class='footer-tip' style='color: #089BF0;'>温馨提示：老用户请使用手机号登录</text>
+  <!-- <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取手机号</button> -->
+  <!-- <view class='footer'>
+    <text class='footer-title'>登录方式</text>
+    <view class='footer-icon-list'>
+      <image bindtap='jumpPage' data-page='../login/login' class='footer-icon' src='../../img/icon-mobile.png'></image>
+      <image class='footer-icon' src='../../img/icon-wx.png'></image>
+    </view>
+  </view> -->
+</view>

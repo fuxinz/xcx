@@ -1,0 +1,61 @@
+<!--pages/drawBill/cashier/cashier.wxml-->
+<image class='page-bg' src='../../../img/userorder_bg.jpg'></image>
+<view>
+  <view class='header'>
+    <view>收款金额</view>
+    <view>¥{{amount}}</view>
+  </view>
+  <view class='main'>
+    <view class='main-inner'>
+      <view class='main-inner-title'>请选择付款方式</view>
+      <radio-group bindchange="changePayMethod">
+        <view class='mode-item'>
+          <view class='flex'>
+            <image class='mode-item-icon' src='../../../img/icon_whitestrip.png'></image>
+            <view class='flex1'>
+              <view class='mode-item-title'>车云e分期</view>
+              <text class='mode-item-txt'></text>
+            </view>
+            <radio value="3" checked="" bindtap='selectBank'/>
+          </view>
+          <!-- <view class='flex' style='padding-top: 30rpx;' wx:if="{{payMet==3}}">
+            <button class='choose-btn {{periods==6 ? "choose-btn_active": ""}}' 
+              bindtap='changePeriods' data-periods='6'>6期</button>
+            <button class='choose-btn {{periods==12 ? "choose-btn_active": ""}}'
+              bindtap='changePeriods' data-periods='12'>12期</button>
+          </view> -->
+        </view>
+        <view class='mode-item flex'>
+          <image class='mode-item-icon' src='../../../img/icon_wechat.png'></image>
+          <view class='flex1'>
+            <view class='mode-item-title'>微信支付</view>
+            <text class='mode-item-txt'>生成二维码用于微信进行结算</text>
+          </view>
+          <radio value="2" checked="" />
+        </view>
+        <view class='mode-item flex'>
+          <image class='mode-item-icon' src='../../../img/icon_pos.png'></image>
+          <view class='flex1'>
+            <view class='mode-item-title'>POS支付</view>
+            <text class='mode-item-txt'>用于电子支付进行结算</text>
+          </view>
+          <radio value="1" checked="" />
+        </view>
+        <view class='mode-item flex'>
+          <image class='mode-item-icon' src='../../../img/icon_under_line.png'></image>
+          <view class='flex1'>
+            <view class='mode-item-title'>线下支付</view>
+            <text class='mode-item-txt'>选择后自动保存订单，用户可线下进行结算</text>
+          </view>
+          <radio value="0" checked="" />
+        </view>
+      </radio-group>
+      <!-- <navigator url='./qrcode'> -->
+        <button class='confirm-btn' bindtap='handleConfirm'>确认</button>
+      <!-- </navigator> -->
+    </view>
+  </view>
+  <navigator url="/pages/workspace/workspace" open-type="switchTab">
+    <view class='footer'>首页</view>
+  </navigator>
+</view>

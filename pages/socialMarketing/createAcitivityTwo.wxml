@@ -1,0 +1,175 @@
+<!--pages/socialMarketing/createAcitivityTwo.wxml-->
+<view class='warp-content'>
+<form bindsubmit="handleSubmit">
+  <view class='active-eidt-title'>
+    <image src='../../img/icon-fire.png'></image>
+    <view>优惠券信息</view>
+  </view>
+  <view class='input-con'>
+    <view class='item'>
+      <view><text style='color:red'>*</text><text>活动状态</text></view>
+      <switch checked='{{updata.status==1}}' bindchange="switchChangeStatus" />
+    </view>
+    <!-- <view class='item'>
+      <view><text style='color:red'>*</text><text>活动名称</text></view>
+      <input name='' value='{{activity.title}}' disabled />
+    </view> -->
+    <view class='item'>
+      <!-- <view><text style='color:red'>*</text><text>活动规则</text></view> -->
+      <textarea name='remark' value='{{activity.remark}}' placeholder="请填写活动规则..." />
+    </view>
+    <view class='img-con'>
+      <view class='camera-con' bindtap='chooseImage'>
+        <image src='{{"../../img/icon-camera.png"}}'></image>
+      </view>
+      <view class='pic-con' bindtap='chooseImage'>
+        <image class='show-img' src='{{updata.filepath || "../../img/icon-camera.png"}}' mode='aspectFill'></image>
+      </view>
+    </view>
+  </view>
+  <view class='active-eidt-title'>
+    <image src='../../img/icon-coupon-info.png'></image>
+    <view>发券信息</view>
+  </view>
+  <view class='input-con'>
+    <view class='item no-justify-content'>
+      <view><text style='color:red'>*</text><text>发券类型</text></view>
+      <view class='i-type' wx:if='{{activity.type==1 || activity.exeType==1}}'>
+        <image src='../../img/icon-coupon1-red.png'></image>
+        <view><text>优惠券</text></view>
+      </view>
+      <view class='i-type' wx:if='{{activity.type==2 || activity.exeType==2}}'>
+        <image src='../../img/icon-coupon2-red.png'></image>
+        <view><text>折扣券</text></view>
+      </view>
+      <view class='i-type' wx:if='{{activity.type==3 || activity.exeType==3}}'>
+        <image src='../../img/icon-coupon3-red.png'></image>
+        <view><text>次数券</text></view>
+      </view>
+    </view>
+    <view class='item'>
+      <view><text style='color:red'>*</text><text>门槛</text></view>
+      <view class='i-condition' wx:if='{{activity.type==1 || activity.exeType==1}}'>
+        <text>满</text>
+        <input name='useThreshold' type='number' value='{{activity.threshold || activity.useThreshold}}'></input>
+        <text>元减</text>
+        <input name='exeFacevalue' type='number' value='{{activity.discount || activity.exeFacevalue || 0}}'></input>
+        <text>元</text>
+      </view>
+      <view class='i-condition'  wx:if='{{activity.type==2 || activity.exeType==2}}'>
+        <text>满</text>
+        <input name='useThreshold' type='number' value='{{activity.threshold || activity.useThreshold}}'></input>
+        <text>元打</text>
+        <input name='exeFacevalue' type='digit' value='{{activity.discount/10 || activity.exeFacevalue/10}}'></input>
+        <text>折</text>
+      </view>
+      <view class='i-condition'  wx:if='{{activity.type==3 || activity.exeType==3}}'>
+        <text>满</text>
+        <input name='useThreshold' type='number' value='{{activity.threshold || activity.useThreshold}}'></input>
+        <text>元免</text>
+        <input name='exeFacevalue' type='number' value='{{activity.discount || activity.exeFacevalue}}'></input>
+        <text>次</text>
+      </view>
+    </view>
+    <view class='item'>
+      <view><text style='color:red'>*</text><text>预算张数</text></view>
+      <view class='i-condition'><input name='totalNum' type='number' value='{{activity.budget || activity.totalNum}}'></input></view>
+    </view>
+    <view class='item'>
+      <view><text style='color:red'>*</text><text>领券上限</text></view>
+      <view style='display:flex;align-items: center;'>
+        <text class='color-b'>（单人领券数量上限）</text>
+        <view class='i-condition'><input name='upperlimit' type='number' value='{{activity.getMax || activity.upperlimit}}'></input></view>
+      </view>
+    </view>
+    <view class='item'>
+      <view><text style='color:red'>*</text><text>起始时间</text></view>
+      <view class='i-time'>
+        <!-- <picker
+          mode="date"
+          value="{{date}}"
+          name='activityStartTime'
+          bindchange="bindDateChange"
+          style='width:70%'
+        >
+          <view class="picker">{{activity.startTsp}}</view>
+        </picker> -->
+
+        <picker
+          mode="multiSelector"
+          value="{{dateTime}}"
+          bindchange="changeDateTime"
+          bindcolumnchange="changeDateTimeColumn"
+          data-type='start'
+          range="{{dateTimeArray}}"
+        >
+          <view class="picker">
+              {{updata.activityStartTime}}    
+          </view>
+        </picker>
+        <image style='width:46rpx;height:46rpx;' src='../../img/icon-date.png'></image>
+      </view>
+    </view>
+    <view class='item'>
+      <view><text style='color:red'>*</text><text>结束时间</text></view>
+      <view class='i-time'>
+        <picker
+          mode="multiSelector"
+          value="{{dateTime}}"
+          bindchange="changeDateTime"
+          bindcolumnchange="changeDateTimeColumn"
+          data-type='end'
+          range="{{dateTimeArray}}"
+        >
+          <view class="picker">
+            {{updata.activityEndTime}}    
+          </view>
+        </picker>
+        <image style='width:46rpx;height:46rpx;' src='../../img/icon-date.png'></image>
+      </view>
+    </view>
+    <view class='item'>
+      <view><text style='color:red'>*</text><text>联系人</text></view>
+      <input name='contacts' value='{{activity.contacts}}' placeholder='请输入联系人'/>
+    </view>
+    <view class='item'>
+      <view><text style='color:red'>*</text><text>联系电话</text></view>
+      <input name='contactsTel' value='{{activity.contactsTel}}' placeholder='请输入联系电话'/>
+    </view>
+    <view class='item'>
+      <view><text style='color:red'>*</text><text>活动地址</text></view>
+      <input name='activityAddress' value='{{activity.activityAddress}}' placeholder='请输入活动地址'/>
+    </view>
+
+  </view>
+  <view class='item' style='margin:20rpx 0;background-color:#FFFFFF;padding:20rpx 30rpx;border-bottom:none'>
+    <view><text style='color:red'>*</text><text>是否可以领取</text></view>
+    <switch checked='{{activity.isdistribute=="0"}}' bindchange="switchChangeIsdistribute" />
+  </view>
+
+  <view class='footer-con'>
+    <view class='footer-nav'>
+      <navigator open-type="navigateBack">
+        <image class='back-icon' src='../../img/icon-left.png'></image>
+        <view>返回</view>
+      </navigator>
+    </view>
+    <view class='footer-nav'>
+      <navigator url='/pages/workspace/workspace' open-type="reLaunch">
+        <image class='home-icon' src='../../img/icon-home.png'></image>
+        <view>首页</view>
+      </navigator>
+    </view>
+    <view class='footer-nav'>
+      <navigator url='./detail?vCRMActivityId={{updata.templateId}}'>
+        <image class='info-icon' src='../../img/icon-coupon-info.png'></image>
+        <view>详情</view>
+      </navigator>
+    </view>
+    <!-- <view class='footer-nav add-btn' bindtap='createActivity'>
+      确认并创建活动
+    </view> -->
+    <button class='footer-nav add-btn' formType="submit">确认并创建活动</button>
+  </view>
+</form>
+</view>

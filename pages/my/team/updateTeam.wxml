@@ -1,0 +1,52 @@
+<!--pages/my/team/createTeam.wxml-->
+<view class='list'>
+  <view class='list-item flex list-header'>
+    <text class='list-header-title'>团队LOGO</text>
+    <view class='list-header-logo' bindtap='chooseImage'>
+      <image wx:if='{{true}}' src='{{logo || "../../../img/icon-ad.png"}}'></image>
+      <text wx:else>上传LOGO</text>
+    </view>  
+  </view>
+  <view class='list-item flex'>
+    <text class='flex1'>我的团队</text>
+    <input placeholder="请填写团队名称" value='{{name}}' bindblur='handleInputChange' data-type='name' />
+  </view>
+  <!-- <view class='list-item flex'>
+    <text class='flex1'>所属公司</text>
+    <input placeholder="请填写公司名称" bindblur='handleInputChange' data-type='belongCompany'/>
+  </view> -->
+  <view class='list-item flex' bindtap='handleCheckScale'>
+    <text class='flex1'>人员规模</text>
+    <text>{{teamsizeTxt}}</text>
+    <image class='icon-more' src='../../../img/icon-more.png'></image>
+  </view>
+  <picker mode="selector" range="{{areaList}}" range-key='province' bindchange='handleChangeArea'>
+    <view class='list-item flex'>
+      <text class='flex1'>地区</text>
+      <text>{{area}}</text>
+      <image class='icon-more' src='../../../img/icon-more.png'></image>
+    </view>
+  </picker>
+  <!-- <view class='list-item flex'>
+    <text class='flex1'>我的职务</text>
+    <text>人事</text>
+    <image class='icon-more' src='../../../img/icon-more.png'></image>
+  </view> -->
+  <!-- <button class='btn' bindtap='handleModify'>修  改</button> -->
+</view>
+
+<view class='footer flex'>
+  <navigator url="/pages/workspace/workspace" open-type="navigateBack">
+    <view class='pre-btn'>
+      <image class='icon' src='../../../img/icon-left.png'></image>
+      <view>返回</view>
+    </view>
+  </navigator>
+  <navigator url="/pages/workspace/workspace" open-type="switchTab">
+    <view class='pre-btn'>
+      <image class='icon' src='../../../img/icon-home.png'></image>
+      <view>首页</view>
+    </view>
+  </navigator>
+  <view class='last-btn flex1' bindtap='handleModify'>修  改</view>
+</view>

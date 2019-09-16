@@ -1,0 +1,11 @@
+<!--pages/my/ad/ad.wxml-->
+<view class='list'>
+  <view class='list-item'>
+    <view class='list-item-header'></view>
+    <view class='list-item-txt'></view>
+    <view class='list-item-content'>
+      <text></text>
+      
+    </view>
+  </view>
+</view>

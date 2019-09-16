@@ -1,0 +1,81 @@
+page{
+  font-size: 28rpx;
+}
+.page-bg{
+  width: 100%;
+  height: 420rpx;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+.header{
+  width: 100%;
+  height: 420rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.header .header-pic{
+  width: 144rpx;
+  height: 144rpx;
+  border-radius: 72rpx;
+  margin: 50rpx;
+}
+.header-info{
+  color: #fff;
+  padding-top: 60rpx;
+}
+.main{
+  padding: 450rpx 100rpx 0;
+}
+.form-tip{
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  position: relative;
+}
+.form-tip::before{
+  content: '';
+  width: 100rpx;
+  height: 1rpx;
+  background-color: #ccc;
+  position: absolute;
+  left: -30rpx;
+  top: 20rpx;
+}
+.form-tip::after{
+  content: '';
+  width: 100rpx;
+  height: 1rpx;
+  background-color: #ccc;
+  position: absolute;
+  right: -30rpx;
+  top: 20rpx;
+}
+.form-item{
+  height: 80rpx;
+  background-color: #f2f2f2;
+  margin-top: 40rpx;
+  border-radius: 40rpx;
+  overflow: hidden;
+}
+.form-item>input{
+  height: 80rpx;
+  padding: 0 20rpx;
+}
+.code-btn{
+  width: 162rpx;
+  background-color: #ff9900;
+  color: #fff;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 24rpx;
+}
+.form-item-btn{
+  height: 80rpx;
+  line-height: 82rpx;
+  background-color: #0099ff;
+  color: #fff;
+  font-size: 32rpx;
+}

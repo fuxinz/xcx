@@ -1,0 +1,102 @@
+<!--pages/busness/busnessIndex/index.wxml-->
+<view class='warp-content'>
+  <view class='header-con'>
+    <view class="nav {{ tabItem==0 ? 'active': '' }}" bindtap='changeTab' data-index='0'>现场商机</view>
+    <view class="nav {{ tabItem==1 ? 'active': '' }}" bindtap='changeTab' data-index='1'>保养返厂</view>
+  </view>
+  <view class='tab-con'>
+    <view class='tab' wx:if='{{tabItem == 0}}'>
+      <view class='item'>
+        <view class='i-li s-border-bottom'>
+          <navigator url='../busness/busness?type=1'>
+            <view class='li-con'><view>{{busnessData.con}}</view><view>全部现场商机</view></view>
+          </navigator>
+          <view class='li-con'><view>{{busnessData.fate ? busnessData.fate : 0}}%</view><view>本月达成率</view></view>
+        </view>
+        <view class='i-li'>
+          <navigator url='../busness/busness?type=1&orderOpStatus=2'>
+            <view class='li-con'><view>{{busnessData.fin}}</view><view>已达成</view></view>
+          </navigator>
+          <navigator url='../busness/busness?type=1&orderOpStatus=1'>
+            <view class='li-con'><view>{{busnessData.unfin}}</view><view>未达成</view></view>
+          </navigator>
+          <navigator url='../busness/busness?type=1&orderOpStatus=4'>
+            <view class='li-con'><view>{{busnessData.closed}}</view><view>已关闭</view></view>
+          </navigator>
+        </view>
+      </view>
+      <view class='item'>
+        <view class='i-li s-border-bottom space-other'>
+          <view>商机提醒</view>
+          <view><view>预约逾期</view><view style='color: #000;margin-left:10rpx'>{{busnessData.overDue}}</view></view>
+        </view>
+        <view class='i-li'>
+          <navigator url='../busness/busness?type=2&reserveTime=BZ'>
+            <view class='li-con'><view>{{busnessData.bzOverDue}}</view><view>本周即将到期</view></view>
+          </navigator>
+          <navigator url='../busness/busness?type=2&reserveTime=BY'>
+            <view class='li-con'><view>{{busnessData.byOverDue}}</view><view>本月即将到期</view></view>
+          </navigator>
+        </view>
+      </view>
+      <view class='outer-item'>
+        <view class='item item-set-width'>
+          <view class='i-li s-border-bottom space-other'>
+            <view>销售回访</view>
+          </view>
+          <view class='i-li'>
+            <navigator url='../busness/busness?type=3&callStatus=0'>
+              <view class='li-con'><view>{{busnessData.uncs}}</view><view>未回访</view></view>
+            </navigator>
+            <navigator url='../busness/busness?type=3&callStatus=1'>
+              <view class='li-con'><view>{{busnessData.csed}}</view><view>已回访</view></view>
+            </navigator>
+          </view>
+        </view>
+        <navigator class='btn-con'  url='/pages/drawBill/addCar/addCar' open-type='redirect'>
+            <image src='../../../img/icon-add.png'></image>
+            <view>新增商机</view>
+        </navigator>
+      </view>
+
+
+    </view>
+    <view class='tab' wx:elif='{{tabItem == 1}}'>
+      <view class='item'>
+        <view class='i-li s-border-bottom'>
+          <view class='li-con'><view>{{insuranceData.con ? insuranceData.con :0}}</view><view>全部保养商机</view></view>
+          <view class='li-con'><view>{{insuranceData.fate ? insuranceData.fate : 0}}%</view><view>本月达成率</view></view>
+        </view>
+        <view class='i-li'>
+          <view class='li-con'><view>{{insuranceData.fin ? insuranceData.fin : 0}}</view><view>已成交</view></view>
+          <view class='li-con'><view>{{insuranceData.unfin ? insuranceData.unfin :0}}</view><view>未成交</view></view>
+          <view class='li-con'><view>{{insuranceData.closed ? insuranceData.closed : 0}}</view><view>已关闭</view></view>
+        </view>
+      </view>
+      <view class='item'>
+        <view class='i-li s-border-bottom space-other'>
+          <view>保养提醒</view>
+          <view><view>预约逾期</view><view style='color: #000;margin-left:10rpx'>{{insuranceData.moverDue ? insuranceData.moverDue :0}}</view></view>
+        </view>
+        <view class='i-li'>
+          <view class='li-con'><view>{{insuranceData.overDue ? insuranceData.overDue : 0}}</view><view>本周即将到期</view></view>
+          <view class='li-con'><view>{{insuranceData.soverDue ? insuranceData.soverDue :0}}</view><view>本月即将到期</view></view>
+        </view>
+      </view>
+      <view class='item'>
+          <view class='i-li s-border-bottom space-other'>
+            <view>保养回访</view>
+          </view>
+          <view class='i-li'>
+            <view class='li-con'><view>{{insuranceData.uncs ? insuranceData.uncs : 0}}</view><view>未回访</view></view>
+            <view class='li-con'><view>{{insuranceData.csed ? insuranceData.csed : 0}}</view><view>已回访</view></view>
+          </view>
+      </view>
+
+    </view>
+  </view>
+  <!-- <view class='footer-con'>
+    <view class='nav'><navigator open-type="navigateBack">返回</navigator></view>
+    <view class='nav'><navigator url='/pages/workspace/workspace' open-type="reLaunch">首页</navigator></view>
+  </view> -->
+</view>

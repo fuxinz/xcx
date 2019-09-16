@@ -1,0 +1,58 @@
+<!--pages/my/team/seeTeam.wxml-->
+<view class='header flex'>
+  <view class='header-logo'>
+    <image  wx:if='{{team.logo}}' src='{{team.logo}}'></image>
+    <text wx:else>LOGO</text>
+  </view>
+  <text class='header-team-name'>{{team.name}}</text>
+  <view class='header-bottom flex'>
+    <text>团队ID：{{team.code}}</text>
+    <button wx:if='{{useinfo.role==1}}' class='header-btn' bindtap='jumpUpdatePage'>修改</button>
+  </view>
+</view>
+
+<view class='list'>
+  <view class='list-session-header'>邀请方式</view>
+  <button class='list-item flex action-sheet-button' open-type="share">
+    <image class='icon-main' src='../../../img/icon-ad.png'></image>
+    <text class='flex1'>微信邀请成员</text>
+    <image class='icon-more' src='../../../img/icon-more.png'></image>
+  </button>
+  <!-- <button class='action-sheet-button' open-type="share">发券给朋友</button> -->
+  <!-- <view class='list-item flex'>
+    <image class='icon-main' src='../../../img/icon-ad.png'></image>
+    <text class='flex1'>手机号邀请成员</text>
+    <image class='icon-more' src='../../../img/icon-more.png'></image>
+  </view> -->
+  <view class='list-item flex' bindtap='jumpQrcode'>
+    <image class='icon-main' src='../../../img/icon-ad.png'></image>
+    <text class='flex1'>二维码邀请成员</text>
+    <image class='icon-more' src='../../../img/icon-more.png'></image>
+  </view>
+  <view>
+    <view class='list-session-header'>团队管理</view>
+    <!-- <view class='list-item flex'>
+      <image class='icon-main' src='../../../img/icon-ad.png'></image>
+      <text class='flex1'>老板</text>
+      <text>1</text>
+      <image class='icon-more' src='../../../img/icon-more.png'></image>
+    </view> -->
+    <view class='list-item flex' bindtap='jumpColleaguePage'>
+      <image class='icon-main' src='../../../img/icon-ad.png'></image>
+      <text class='flex1'>同事</text>
+      <text>{{team.teamNumber || 0}}</text>
+      <image class='icon-more' src='../../../img/icon-more.png'></image>
+    </view>
+    <view wx:if='{{useinfo.role==1}}' class='list-item flex' bindtap='handleTransfer'>
+      <image class='icon-main' src='../../../img/icon-ad.png'></image>
+      <text class='flex1'>团队转让</text>
+      <image class='icon-more' src='../../../img/icon-more.png'></image>
+    </view>
+    <!-- <view class='list-item flex'>
+      <image class='icon-main' src='../../../img/icon-ad.png'></image>
+      <text class='flex1'>创建者</text>
+      <text>1</text>
+      <image class='icon-more' src='../../../img/icon-more.png'></image>
+    </view> -->
+  </view>
+</view>

@@ -1,0 +1,92 @@
+/* pages/drawBill/cashier/cashier.wxss */
+page{
+background-color: #ededed;
+}
+
+.page-bg{
+  width: 100%;
+  height: 224rpx;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+.header{
+  width: 570rpx;
+  height: 100rpx;
+  margin: 60rpx auto 30rpx;
+  background-color: #fff;
+  color: orange;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 40rpx;
+  padding: 50rpx 60rpx;
+  border-radius: 10rpx;
+}
+.main{
+  width: 690rpx;
+  margin: 0 auto 100rpx;
+  border-radius: 10rpx;
+  background-color: #fff;
+}
+.main-inner{
+  padding: 30rpx;
+  margin-bottom: 100rpx;
+}
+.main-inner-title{
+  font-size: 30rpx;
+  font-weight: bold;
+  height: 70rpx;
+  line-height: 70rpx;
+}
+.mode-item{
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #e0e0e0;
+  align-items: center;
+}
+.mode-item-icon{
+  width: 50rpx;
+  height: 50rpx;
+  padding-right: 20rpx;
+}
+.mode-item-title{
+  font-size: 32rpx;
+}
+.mode-item-txt{
+  color: #999;
+  font-size: 24rpx;
+}
+.choose-btn{
+  width: 240rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #fff;
+  font-size: 30rpx;
+}
+
+.choose-btn_active{
+  color: orange;
+}
+.choose-btn_active::after{
+  border-color: orange;
+}
+.confirm-btn{
+  margin-top: 40rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  color: #fff;
+  background-color: #3399ff;
+}
+
+.footer{
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-top: 1rpx solid #e4e4e4;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: #FFFFFF;
+  text-align: center;
+}

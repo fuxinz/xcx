@@ -1,0 +1,39 @@
+
+<import src="../../wxParse/wxParse.wxml"/>
+<view class='header'>
+  <image class='header-bg' src='../../img/img_active5.jpg'></image>
+  <view class='header-inner'>
+    <view class='header-title'>{{activity.exeType==1?'优惠劵':activity.exeType==2?'折扣券':'次数劵'}}</view>
+    <text class='header-tip'>{{activity.exeName}}</text>
+  </view>
+</view>
+<view class='html-wrap'>
+  <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+</view>
+
+  <view class='form-wrap' wx:if='{{isFormShow}}'>
+    <view class='form-header'>
+      <image src='{{activity.filepath || activity.picURL}}' mode='aspectFill'></image>
+    </view>
+    <form bindsubmit="handleSubmit" wx:if="{{activity.isdistribute==0}}">
+      <view class='form-tip'>请填写相关资料进行领取 </view>
+      <view class='form-item'>
+        <input name='socialUserName' placeholder='请输入姓名'/>
+      </view>
+      <view class='form-item'>
+        <input name='socialUserPhone' placeholder='手机号'/>
+      </view>
+      <view class='form-item'>
+        <button class='form-btn' formType="submit">立即领取</button>
+      </view>
+    </form>
+    <view class='form-footer'>
+      <view class='form-footer-title'><text>活动说明</text></view>
+      <text>{{activity.remark}}</text>
+      <view class='form-footer-title'><text>联系人信息</text></view>
+      <view>联系人: {{activity.contacts}}</view>
+      <view>电话：{{activity.contactsTel}}</view>
+      <view>地址：{{activity.activityAddress}}</view>
+    </view>
+  </view>
+

@@ -1,0 +1,44 @@
+<!--pages/socialMarketing/createActivityOne.wxml-->
+<view class='warp-content'>
+  <radio-group bindchange="checkMark">
+    <label wx:for='{{markCreateList}}' wx:key='{{item.id}}'>
+      <view class='active-item' >
+        <view class='bg'>
+          <image src='{{item.picURL}}' mode='aspectFill'></image>
+        </view>
+        <view class='active-title'>
+          <view>{{item.exeName}}</view>
+          <radio value="{{item.id}}"></radio>
+          <!-- <icon type="success" size="20" color="grey"/> -->
+        </view>
+        <view class='active-bottom'>
+          <view>开始时间：{{item.startTsp}}</view>
+          <view>结束时间：{{item.endTsp}}</view>
+        </view>
+        <view class='tag-type tag-hui'>
+          <image wx:if='{{item.type==1}}' src='../../img/icon-hui.png'></image>
+          <image wx:if='{{item.type==2}}' src='../../img/icon-zhe.png'></image>
+          <image wx:if='{{item.type==3}}' src='../../img/icon-ci.png'></image>
+        </view>
+        <view class='active-item-btn' bindtap='jumpDetail' data-id='{{item.id}}'>查看详情</view>
+      </view>
+    </label>
+  </radio-group>
+  <view class='footer-con'>
+    <view class='footer-nav'>
+      <navigator open-type="navigateBack">
+        <image class='back-icon' src='../../img/icon-left.png'></image>
+        <view>返回</view>
+      </navigator>
+    </view>
+    <view class='footer-nav'>
+      <navigator url='/pages/workspace/workspace' open-type="reLaunch">
+        <image class='home-icon' src='../../img/icon-home.png'></image>
+        <view>首页</view>
+      </navigator>
+    </view>
+    <view class='footer-nav add-btn' bindtap='createActivity'>
+      确认并创建
+    </view>
+  </view>
+</view>

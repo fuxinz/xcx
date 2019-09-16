@@ -1,0 +1,77 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/workspace/workspace",
+    "pages/drawBill/addCar/addCar",
+    "pages/drawBill/vehicle/vehicle",
+    "pages/drawBill/service/service",
+    "pages/drawBill/editService/editService",
+    "pages/drawBill/input/input",
+    "pages/drawBill/vehicleOwner/index",
+    "pages/drawBill/cashier/cashier",
+    "pages/drawBill/cashier/qrcode",
+    "pages/drawBill/cashier/success",
+    "pages/qztRegister/qztRegister",
+    "pages/qztRegister/qztRegister1",
+    "pages/qztRegister/qztAuthIng",
+    "pages/register/step1/step1",
+    "pages/register/step2/step2",
+    "pages/register/step3/step3",
+    "pages/register/agreement/agreement",
+    "pages/vipMember/vipMember",
+    "pages/login/login",
+    "pages/my/my",
+    "pages/my/personal/personal",
+    "pages/my/qrcode/qrcode",
+    "pages/my/team/seeTeam",
+    "pages/my/team/updateTeam",
+    "pages/my/team/phoneInvite",
+    "pages/my/team/colleague",
+    "pages/my/ad/ad",
+    "pages/my/store/store",
+    "pages/my/bill/bill",
+    "pages/my/team/qrcode",
+    "pages/webPage/webPage",
+    "pages/qzt/qzt",
+    "pages/share/share",
+    "pages/busness/index/index",
+    "pages/busness/busness/busness",
+    "pages/busness/visit/visit",
+    "pages/busness/editVisit/editVisit",
+    "pages/busness/detail/detail",
+    "pages/socialMarketing/index",
+    "pages/socialMarketing/createActivityOne",
+    "pages/socialMarketing/createAcitivityTwo",
+    "pages/socialMarketing/activityAna",
+    "pages/socialMarketing/activityInfo",
+    "pages/socialMarketing/customer",
+    "pages/socialMarketing/detail",
+    "pages/storeChain/storeChain",
+    "pages/drawBill/cashier/EStaging"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "车云小二",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#4162ff",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/workspace/workspace",
+        "text": "工作站",
+        "iconPath": "./img/icon-workspace-black.png",
+        "selectedIconPath": "./img/icon-workspace-blue.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "./img/icon-mine-black.png",
+        "selectedIconPath": "./img/icon-mine-blue.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

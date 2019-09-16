@@ -1,0 +1,22 @@
+<!--pages/my/team/colleague.wxml-->
+<view class='header'>
+  <view class='search-con'>
+    <input placeholder='搜索' type='text' confirm-type='search' bindconfirm='confimSearch'></input>
+    <image src='../../../img/icon-search.png'></image>
+  </view>
+</view>
+<view class='colleague-list'>
+  <view class='colleague-item flex' 
+    wx:for='{{members}}'
+    wx:key='{{item.userid}}'
+    bindtap='handleCheckColleague'
+    data-item='{{item}}'
+    data-i='{{index}}'
+  >
+    <image class='colleague-icon' src='{{item.headimgurl || "../../../img/icon-ad.png"}}'></image>
+    <view class='flex1'>
+      <view class='colleague-name'>{{item.nick}}</view>
+      <view class='colleague-info'>{{item.mobile}}</view>
+    </view>
+  </view>
+</view>

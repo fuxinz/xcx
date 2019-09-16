@@ -1,0 +1,27 @@
+page{
+  background-color: #08a2f0;
+  height: 100%;
+  font-size: 30rpx;
+  position:absolute;
+}
+.main{
+  width: 90%;
+  height: 85%;
+  margin: 50rpx auto;
+  background-color: #fff;
+  text-align: center;
+}
+.main-header{
+  width: 500rpx;
+  padding: 30rpx;
+  border-bottom: 1rpx solid #f2f2f2;
+  margin: 0 auto;
+}
+.qrcode{
+  width: 400rpx;
+  height: 400rpx;
+  margin: 60rpx auto;
+}
+.main-footer{
+  padding: 30rpx;
+}

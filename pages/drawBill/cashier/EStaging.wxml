@@ -1,0 +1,29 @@
+<!--pages/drawBill/cashier/EStaging.wxml-->
+<view class='heade'>
+  <view class='bankClass list'>
+    <view class='title'>
+      <text style='color:red'>*</text>
+      <text>银行类别</text>
+    </view>
+    <picker bindchange="bankPickerChange"  range="{{bankArray}}">
+      <view class='select'>
+        <view>{{bankName}}</view>
+        <view class='icon'></view>
+      </view>
+    </picker>
+  </view>
+  <view class='Staging list'>
+    <view class='title'>
+      <text style='color:red'>*</text>
+      <text>分期数</text>
+    </view>
+    <picker bindchange="NumPickerChange"  range="{{payMetArray}}">
+      <view class='select'>
+        <view>{{periods}}</view>
+        <view class='icon'></view>
+      </view>
+    </picker>
+  </view>
+</view>
+
+<view class='next_btn' bindtap='handleConfirm'>下一步</view>

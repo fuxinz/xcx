@@ -1,0 +1,43 @@
+<!--pages/my/team/phoneInvite.wxml-->
+<image class='page-bg' src='../../../img/login-bg.png'></image>
+<view>
+  <view class='header flex'>
+    <image class='header-pic' src="../../../img/icon-01.png"></image>
+    <view class='header-info flex1'>
+      <text>{{team.createrName}}</text>
+      <view>{{team.name || ''}}</view>
+      <text>团队ID: {{team.code}}</text>
+    </view>
+  </view>
+  <view class='main'>
+    <view class='form-tip'>邀请您加入<text style='color: #0099ff;'>【车云小二】</text></view>
+    <view class='form-item flex'>
+      <input class='flex1' 
+        name='mobile'
+        placeholder='请输入手机号码'
+        type='number'
+        bindinput='handleInputChange'
+        data-type='mobile' />
+    </view>
+    <view class='form-item flex'>
+      <input class='flex1' 
+        name='vcode'
+        placeholder='请输入验证码'
+        type='number'
+        bindinput='handleInputChange'
+        data-type='vcode' />
+      <view class='code-btn' bindtap='sendValidateCode'>{{codeTxt}}</view>
+    </view>
+    <view class='form-item flex'>
+      <input class='flex1' 
+        name='password'
+        placeholder='设置密码'
+        bindinput='handleInputChange'
+        password
+        data-type='password' />
+    </view>
+    <view class='form-item'>
+      <button class='form-item-btn' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo='getUserInfo'>确认</button>
+    </view>
+  </view>
+</view>

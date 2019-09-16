@@ -1,0 +1,80 @@
+<!--pages/drive/vehicle/vehicle.wxml-->
+<scroll-view style='height: {{systemInfo.windowHeight}}px' scroll-y scroll-into-view="{{toView}}" scroll-with-animation="true">
+<view class='header'>
+  <text class='header-title'>热门品牌</text>
+  <view class='hot-list flex'>
+    <view class='hot-list-item' wx:for="{{hotList}}" wx:key='{{item.brand_id}}' bindtap='handleHeaderBrand' data-index='{{index}}'>
+      <image class="brand-logo" src="{{item.brand_logoimg}}"></image>
+      <view class=''>{{item.brand_name}}</view>
+    </view>
+  </view>
+</view>
+
+<!-- <view class="page-list-item flex" 
+      wx:for="{{brandList}}" 
+      wx:key="{{item.brand_id}}"
+      bindtap="handleSelectBrand"
+      data-index="{{index}}"
+    >
+      <image class="brand-logo" src="{{item.brand_logoimg}}"></image>
+      <text class="flex1">{{item.brand_name}}</text>
+    </view> -->
+<view class="page-list">
+  <view wx:for='{{brandList}}' wx:for-item="item1" wx:for-index="i" wx:key="{{item1.title}}" wx:if="{{item1.subList.length>0}}">
+    <view class='section-title' id='{{item1.title}}'>{{item1.title}}</view>
+    <view class="page-list-item flex" 
+      wx:for="{{item1.subList}}" 
+      wx:for-item='item2'
+      wx:for-index="j"
+      wx:key="{{item2.brand_id}}"
+      bindtap="handleSelectBrand"
+      data-i="{{i}}"
+      data-j="{{j}}"
+    >
+      <image class="brand-logo" src="{{item2.brand_logoimg}}"></image>
+      <text class="flex1">{{item2.brand_name}}</text>
+    </view>
+  </view>
+</view>
+<view class='sider-list-wrap flex'>
+  <view class='sider-list'>
+    <view class='sider-list-item'  bindtap='clickScroll' data-id="{{item}}" wx:for="{{siderList}}" wx:key='{{item}}'>{{item}}</view>
+  </view>
+</view>
+
+ 
+<view class="model-list-wrap flex" wx:if="{{typeModal}}">
+  <view class="model-left1" bindtap="closeTypeModal"></view>
+  <view class="flex1">
+    <view class="type-list" wx:for="{{carType}}" wx:for-item="item1" wx:for-index="i" wx:key="{{item1.goruptitle}}">
+      <view class="type-list-title">{{item1.goruptitle}}</view>
+      <view class="type-list-item" 
+        wx:for="{{item1.list}}"
+        wx:for-item="item2"
+        wx:for-index="j"
+        wx:key="{{item2.carstype_id}}"
+        bindtap="handleSelectType"
+        data-i="{{i}}"
+        data-j="{{j}}"
+      >{{item2.carstype_name}}</view>
+    </view>
+  </view>
+</view>
+<view class="model-list-wrap flex" wx:if="{{carModal}}">
+  <view class="model-left2" bindtap="closeCarModal"></view>
+  <view class="flex1">
+    <view class="car-list" wx:for="{{carsList}}" wx:for-item="item1" wx:for-index="i" wx:key="{{item1.goruptitle}}">
+      <view class="car-list-title">{{item1.goruptitle}}</view>
+      <view class="car-list-item" 
+        wx:for="{{item1.list}}" 
+        wx:for-item="item2"
+        wx:for-index="j"
+        wx:key="{{item2.brand_id}}"
+        bindtap="handleSelectCar"
+        data-i="{{i}}"
+        data-j="{{j}}"
+      >{{item2.cars_sortname}}</view>
+    </view>
+  </view>
+</view>
+</scroll-view>

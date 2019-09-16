@@ -1,0 +1,42 @@
+<wxs src="../busness.wxs" module="busness" />
+<view class='header'>
+  <view class='search-con'>
+    <input placeholder='搜索车牌/车主/手机号' type='text' confirm-type='search' bindconfirm='confimSearch'></input>
+    <image src='../../../img/icon-search.png'></image>
+  </view>
+  <view class='sheet-tab' wx:if='{{type!=1}}'>
+    <view class='s-title' bindtap='showCengFun'><text>{{sheetTitle}}</text><image src='{{showCeng ? iconUp: iconDown}}'></image></view>
+    <view class='s-num'>共计 {{busiFillList.length}} 项服务提醒</view>
+  </view>
+</view>
+<view class='ceng' wx:if="{{showCeng}}">
+  <view class='li' 
+    wx:for='{{selectList}}'
+    wx:key='{{index}}'
+    bindtap='selectedFun'
+    data-item='{{item}}'
+    data-index='{{index}}'
+  >
+    <text>{{item.txt}}</text>
+    <image src='{{selectIndex == index ? selectIcon :""}}'></image>
+  </view>
+</view>
+
+<view class='busness-list' style='margin-top: {{type==1? 112: 200}}rpx;'>
+  <view class='busness-item' wx:for='{{busiFillList}}' wx:key='{{busiFillList.id}}'>
+    <view class='busness-item_top flex'>
+      <image class='logo' src='{{item.icon}}'></image>
+      <view class='flex1 busness-item-info'>
+        <view> <text class='busness-item-plate'>{{item.licenceNo}}</text> <text>（{{item.clientName}}）</text></view>
+        <text>预约时间：{{item.reserveTime}}</text>
+      </view>
+      <text class='busness-item-state'>{{busness.returnBusTxt(item.orderOpStatus)}}</text>
+    </view>
+    <view class='busness-item_bottom'>
+      <button class='bill-btn' wx:if='{{item.orderOpStatus!=4 && item.orderOpStatus!=2}}' bindtap='handleBusiClosed' data-sale-no='{{item.saleNo}}' data-index='{{index}}'>关闭商机</button>
+      <button class='bill-btn' bindtap='seeDetailPage' data-url='../detail/detail?id={{item.id}}'>查看详情</button>
+      <button class='bill-btn' wx:if='{{item.orderOpStatus!=4 && item.orderOpStatus!=2}}' bindtap='showActionSheet' data-item='{{item}}'>回访操作</button>
+      <button class='bill-btn bill-confirm-btn' wx:if='{{item.orderOpStatus!=4 && item.orderOpStatus!=2}}' bindtap='handleTurn' data-id='{{item.id}}'>转开单</button>
+    </view>
+  </view>
+</view>

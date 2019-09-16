@@ -1,0 +1,194 @@
+/* pages/workspace/workspace.wxss */
+
+page {
+  background-color: #ededed;
+  font-size: 28rpx;
+}
+
+.page-wrap {
+  position: absolute;
+  z-index: 100;
+  left: 15rpx;
+  right: 15rpx;
+  top: 200rpx;
+}
+
+.header {
+  width: 100%;
+  height: 270rpx;
+  position: relative;
+}
+
+.header-swiper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.header-swiper-item {
+  width: 100%;
+  height: 240rpx;
+  position: relative;
+}
+
+.header-swiper-item image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.header-txt {
+  text-align: center;
+  padding: 40rpx 30rpx;
+  color: #fff;
+  font-size: 34rpx;
+}
+
+.panel {
+  width: 725rpx;
+  margin: 0 auto 20rpx;
+  background-color: #fff;
+}
+
+.panel-header-first {
+  height: 72rpx;
+  line-height: 72rpx;
+  margin: 0 30rpx;
+  border-bottom: 1rpx solid #ebebeb;
+}
+
+.panel-body {
+  padding: 30rpx 0;
+}
+
+.panel-body .flex1 {
+  text-align: center;
+}
+
+.panel .icon {
+  width: 72rpx;
+  height: 72rpx;
+}
+
+.panel-header {
+  height: 120rpx;
+  align-items: center;
+  color: #999;
+}
+
+.panel-header .icon {
+  width: 58rpx;
+  height: 58rpx;
+  padding: 0 20rpx 0 40rpx;
+}
+
+.panel-header-middle-time {
+  font-size: 30rpx;
+}
+
+.panel-footer {
+  height: 60rpx;
+  line-height: 60rpx;
+  background-color: #f9f9f9;
+  color: #999;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+/* panel-main定制区 */
+
+.panel-header-right {
+  width: 100rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  color: #000;
+  border: 1rpx solid #999;
+  border-radius: 50rpx;
+  margin-right: 28rpx;
+}
+
+.system-tip {
+  padding: 10rpx 0 30rpx;
+  text-align: center;
+  font-size: 36rpx;
+}
+
+.blue {
+  color: #06f;
+}
+
+.gray {
+  color: #999;
+}
+
+.red {
+  color: #f30;
+}
+
+.panel-main {
+  padding: 10rpx 0 20rpx;
+}
+
+.panel-main-header {
+  margin-left: 120rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #ebebeb;
+}
+
+.panel-main-center {
+  margin-left: 120rpx;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #ebebeb;
+}
+
+.panel-main-footer {
+  margin-left: 120rpx;
+  padding-top: 20rpx;
+  text-align: center;
+}
+
+.panel-main-footer .flex1 {
+  border-right: 1rpx solid #ebebeb;
+}
+
+.panel-main .canvas {
+  margin: 40rpx auto;
+}
+
+.panel-padding-none {
+  padding: none;
+}
+
+.table {
+  padding: 0 30rpx;
+}
+
+.table-header {
+  height: 60rpx;
+  line-height: 60rpx;
+  background-color: #f2f2f2;
+  font-size: 26rpx;
+  padding: 0 20rpx;
+}
+
+.table-th {
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 1rpx solid #ebebeb;
+  padding: 0 20rpx;
+}
+
+.table-th:last-child {
+  border: none;
+}
+
+.table-td-bold {
+  font-weight: bold;
+  width: 70rpx;
+}

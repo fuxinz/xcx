@@ -1,0 +1,174 @@
+/* pages/drawBill/editService/editService.wxss */
+.page-wrap{
+  padding-bottom: 96rpx;
+}
+page {
+  font-size: 30rpx;
+}
+
+.header {
+  height: 80rpx;
+  padding: 0 30rpx;
+  background-color: #ededed;
+  color: #666;
+  align-items: center;
+}
+
+.header .icon {
+  width: 48rpx;
+  height: 48rpx;
+  padding-right: 20rpx;
+}
+
+.service-item-header {
+  height: 120rpx;
+  border-bottom: 1rpx solid #f2f2f2;
+  align-items: center;
+}
+
+.service-checkbox {
+  width: 100rpx;
+  height: 100rpx;
+  position: relative;
+}
+.service-item{
+  border-bottom: 20rpx solid #f2f2f2;
+}
+.service-item-title {
+  font-size: 32rpx;
+}
+
+.service-item-tip {
+  color: #999;
+  font-size: 28rpx;
+}
+
+.service-btn {
+  height: 120rpx;
+  line-height: 120rpx;
+  padding: 0 30rpx;
+}
+
+.service-btn::before {
+  content: '|';
+  color: #f2f2f2;
+  font-size: 40rpx;
+  padding-right: 20rpx;
+}
+
+/*checkbox---->*/
+checkbox{
+  position: absolute;
+  left: 30rpx;
+  top: 30rpx;
+  width: 40rpx;
+  height: 40rpx;
+  z-index: -1;
+}
+checkbox .wx-checkbox-input {
+  border-radius: 50%;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  border: 1rpx solid #0c0;
+  background: #0c0;
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  border-radius: 50%;
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #fff;
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+
+/*<---checkbox*/
+.red{
+  color: #ff3300;
+}
+.blue{
+  color: #33a5ff;
+}
+.orange{
+  color: #ff6600;
+}
+.stepper{
+  width: 180rpx;
+  height: 60rpx;
+  text-align: center;
+}
+.stepper .btn{
+  line-height: 50rpx;
+  font-size: 40rpx;
+  border: 1rpx solid #f2f2f2;
+}
+.stepper-input-wrap{
+  border-top: 1rpx solid #f2f2f2;
+  border-bottom: 1rpx solid #f2f2f2;
+}
+.service-item-main{
+  padding: 0 30rpx 0 112rpx;
+  color: #999;
+  font-size: 28rpx;
+}
+.service-specific-item{
+  padding: 15rpx 0;
+  border-bottom: 1rpx solid #f2f2f2;
+}
+.service-specific-item_txt{
+  height: 78rpx;
+}
+.price{
+  padding-top: 10rpx;
+  align-items: center;
+}
+.delete-btn{
+  padding-top: 30rpx;
+  text-align: right;
+}
+
+.footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+  width: 100%;
+  height: 96rpx;
+  background-color: #fff;
+  border-top: 1rpx solid #f2f2f2;
+}
+.footer-tip{
+  padding: 0 30rpx;
+  text-align: right;
+  padding-top: 10rpx;
+}
+.footer-tip_txt{
+  color: #999;
+  font-size: 28rpx;
+}
+.pre-btn{
+  width: 120rpx;
+  height: 96rpx;
+  text-align: center;
+  font-size: 26rpx;
+  border-right: 1rpx solid #f2f2f2;
+}
+.pre-btn .icon{ 
+  width: 32rpx;
+  height: 32rpx;
+  padding-top: 15rpx;
+}
+.last-btn{
+  width: 180rpx;
+  text-align: center;
+  background-color: #ff3300;
+  color: #fff;
+  line-height: 96rpx;
+}

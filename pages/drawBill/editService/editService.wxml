@@ -1,0 +1,90 @@
+<!--pages/drawBill/editService/editService.wxml-->
+<view class='page-wrap'>
+  <view class='header flex'>
+    <image class='icon' src='../../../img/icon-car.png'></image>
+    <text>已选 {{projects.length}} 项服务</text>
+  </view>
+  <view  class='service-list'>
+    <view class='service-item' wx:for='{{projects}}' wx:for-item="item1" wx:for-index="i" wx:key='{{item1.id}}'>
+      <view class='service-item-header flex'>
+        <view class='service-checkbox' bindtap='checkboxChange' data-i='{{i}}' data-nochecked='{{item1.noChecked}}'>
+          <checkbox checked='{{!item1.noChecked}}' ></checkbox>
+        </view>
+        <view class='flex1'>
+          <view class='service-item-title'>{{item1.service}}</view>
+          <text class='service-item-tip'>{{item1.serviceDesc || ' '}}</text>
+        </view>
+        <view wx:if="{{activeIndex==i}}" class='service-btn orange' bindtap='handleConserve' data-i='{{i}}'>保存</view>
+        <view wx:else class='service-btn blue' bindtap='handleEdit' data-i='{{i}}'>编辑</view>
+        
+      </view>
+      <view class='service-item-main'>
+        <view class='service-specific-item flex' 
+          wx:for='{{item1.projectItem}}' 
+          wx:for-item="item2" 
+          wx:for-index="j" 
+          wx:key='{{item2.id}}'
+        >
+          <view class='flex1'>
+            <view class='service-specific-item_txt'>{{item2.productName}}</view>
+            <view class='red price flex'>
+              <text>￥</text>
+              <!-- <text style='font-size: 40rpx;'>{{item2.price}}</text> -->
+              <input type='digit' 
+                style='font-size: 40rpx;'
+                value='{{item2.price}}'
+                disabled='{{activeIndex!=i}}'
+                data-i='{{i}}' 
+                data-j='{{j}}' 
+                bindinput='handelPriceBlur'
+              />
+            </view>
+          </view>
+          <view class='' wx:if="{{activeIndex==i}}">
+            <view class='stepper flex'>
+              <view class='btn stepper-reduce flex1' 
+                bindtap='handleReduce' 
+                data-i='{{i}}' 
+                data-j='{{j}}' 
+                data-quantity='{{item2.quantity}}'
+              >-</view>
+              <view class='stepper-input-wrap flex1'>
+                <input class='stepper-input' 
+                  type="number" 
+                  value='{{item2.quantity}}'
+                  bindblur='handelNumBlur'
+                  data-i='{{i}}' 
+                  data-j='{{j}}'
+                 />
+              </view>
+              <view class='btn stepper-reduce flex1'
+                bindtap='handleAdd'
+                data-i='{{i}}'
+                data-j='{{j}}'
+                data-quantity='{{item2.quantity}}'
+              >+</view>
+            </view>
+            <view class='delete-btn'>
+              <text bindtap='handleDelete' data-i='{{i}}' data-j='{{j}}'>删除</text>
+            </view>
+          </view>
+          <view wx:else class='number-wrap flex'><text style='align-self: flex-end;'>x {{item2.quantity}}</text></view>
+          
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='footer flex'>
+  <navigator url="/pages/workspace/workspace" open-type="switchTab">
+    <view class='pre-btn'>
+      <image class='icon' src='../../../img/icon-home.png'></image>
+      <view>首页</view>
+    </view>
+  </navigator>
+  <view class='flex1 footer-tip'>
+    <view><text class='red'>{{projectsNum}}</text> 个项目合计： <text class='red'>￥{{projectsPrice}}</text></view>
+    <text class='footer-tip_txt'>(不含安装费）</text>
+  </view>
+  <view class='last-btn' bindtap='handelNext'>下一步</view>
+</view>

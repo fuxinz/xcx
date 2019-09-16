@@ -1,0 +1,89 @@
+/* pages/register/step3/step3.wxss */
+.page-title{
+  height: 140rpx;
+  padding: 20rpx;
+  text-align: center;
+}
+.page-title text{
+  font-size: 28rpx;
+  color: #999999;
+}
+.form-item{
+  width: 570rpx;
+  height: 70rpx;
+  border-bottom: 1rpx solid #cccccc;
+  margin-bottom: 20rpx;
+}
+.clear-icon{
+  padding-top: 10rpx;
+}
+.form-item-btn{
+  width: 100rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 28rpx;
+  color: #ff6600;
+  text-align: center;
+  border: 1rpx solid #ff6600;
+  border-radius: 10rpx;
+  margin: 5rpx 0 0 20rpx;
+}
+.panel-wrap{
+  height: 256rpx;
+  padding-bottom: 20rpx;
+}
+.panel{
+  width: 570rpx;
+  height: 256rpx;
+  border: 1rpx solid #eeeeee;
+  border-radius: 10rpx;
+}
+.panel-header{
+  height: 70rpx;
+  line-height: 70rpx;
+  border-bottom: 1rpx solid #eeeeee;
+  color: #999999;
+  font-size: 28rpx;
+  margin: 0 20rpx;
+}
+.panel-body{
+  padding: 33rpx 20rpx;
+  font-size: 26rpx;
+  color: #999999;
+}
+.panel-body .name{
+  font-size: 32rpx;
+  color: #000;
+  padding-bottom: 10rpx;
+}
+.panel-img{
+  width: 120rpx;
+  height: 120rpx;
+  padding-right: 20rpx;
+}
+.group-btn{
+  width: 570rpx;
+  padding-top: 40rpx;
+}
+.back-btn{
+  width: 180rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-right: 20rpx;
+  color: #fff;
+  background-color: #cccccc;
+}
+.btn{
+  width: 570rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  color: #fff;
+  background-color: #3399ff;
+}
+.footer-tip{
+  padding-top: 50rpx;
+  font-size: 28rpx;
+  color: #999999;
+  
+}

@@ -1,0 +1,44 @@
+/**app.wxss**/
+page{
+  font-size: 32rpx;
+}
+.container{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  font-size: 32rpx;
+}
+.flex{
+  display: flex;
+}
+.flex1{
+  flex: 1;
+}
+.flex2{
+  flex: 2
+}
+.flex3{
+  flex: 3
+}
+.button-hover{
+  opacity: 0.7;
+}
+
+.blue{
+  color: #0066ff;
+}
+.gray{
+  color: #999999;
+}
+.red{
+  color: #ff3300;
+}
+.yellow{
+  color: #ff9900;
+}
+.green{
+  color: #00cc00;
+}

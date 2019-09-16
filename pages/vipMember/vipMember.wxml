@@ -1,0 +1,70 @@
+<!--pages/vipMember/vipMember.wxml-->
+<view class='header flex'>
+  <view class='user-avatar-wrap'>
+    <open-data class="user-avatar" type="userAvatarUrl"></open-data>
+  </view>
+  <view class='flex1'>
+    <open-data class='user-name' type="userNickName" lang="zh_CN"></open-data>
+    <view class='header-txt' wx:if='{{useinfo.expirytime}}'>车云小二将于 <text style='color: #ff9900'>{{useinfo.expirytime}}</text>到期</view>
+    <view class='header-txt' wx:else>欢迎使用车云小二</view>
+  </view>
+</view>
+<view class='main'>
+  <view class='product-list'>
+    <text class='main-title'>车云小二套餐</text>
+    <view wx:for='{{productList}}' wx:key='{{item.id}}'>
+      <view class='option-item flex {{activeProduct==index?"option-item-active":""}}' 
+        bindtap='handleChangeProduct'
+        data-index='{{index}}'
+        data-sale-price='{{item.salePrice}}'
+      >
+        <view class='flex1'>
+          <view>{{item.productName}}</view>
+          <text>{{item.specification}}使用期</text>
+        </view>
+        <text class='price gray'>￥{{item.price}}</text>
+        <view class='money {{activeProduct==index?"red":""}}'>￥<text>{{item.salePrice}}</text></view>
+      </view>
+      <view class='main-tip gray'>{{item.description}}</view>
+    </view>
+  </view>
+  <view class='discount-box'>
+    <view class='option-item flex'>
+      <view class='flex1'>
+        <view class=''>优惠劵</view>
+        <text class='gray'>使用优惠劵享更多优惠</text>
+      </view>
+      <!-- <view  class='flex' style='align-items: center;'>
+        <image class='discount-icon' src='../../img/icon07.png'></image>
+        <text>减免劵</text>
+      </view> -->
+      <view class='flex' style='height: 100%; align-items: center;' bindtap='handleScanCode'>
+        <text>扫描获取</text>
+        <image class='discount-icon' src='../../img/icon06.png'></image>
+      </view>
+    </view>
+    <view wx:if='{{couponState}}' class='flex discount-money'>
+      <view >优惠金额</view>
+      <view class='flex1 flex' style='height: 100%;align-items: center; padding-left: 30rpx;'>
+        <image class='discount-icon' src='../../img/icon07.png'></image>
+        <text>减免</text>
+      </view>
+      <text class='red'>-￥{{discountPrice}}</text>
+    </view>
+    
+  </view>
+</view>
+<view class='footer-tip gray'>
+    <view>点击去充值，即表示已阅读并同意<text style='color: #3399ff;'>《充值协议》</text></view>
+    <view>车云小二不会以任何形式要求您输入银行账户和密码</view>
+  </view>
+<view class='footer flex'>
+  <navigator url="/pages/register/step1/step1" open-type='reLaunch' wx:if='{{type ==1}}'>
+    <view class='pre-btn'>
+      <image class='icon' src='../../img/icon-left.png'></image>
+      <view>返回</view>
+    </view>
+  </navigator>
+  <view class='pay-txt'>应付金额: <text style='color: #ff9900;'>￥{{paymentPrice}}</text></view>
+  <view class='pay-btn flex1' bindtap='handleBuyAction'>去充值</view>
+</view>

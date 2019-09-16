@@ -1,0 +1,35 @@
+<!--pages/drawBill/addCar/addCar.wxml-->
+<view class='container'>
+  <picker mode='selector' range-key='province' bindchange='changeProvince' range="{{area}}">
+    <view class='address'>
+      <text>当前位置： {{province}}</text>
+    </view>
+  </picker>
+  <view class='license-plate flex' bindtap='showPanelAction'>
+    <view class='item-box'>{{plateNum[0]}}</view>
+    <view class='item-box' style="border-right-color: #d7d7d7;">{{plateNum[1]}}</view>
+    <view class='flex1' style='font-size: 100rpx;line-height: 20rpx;'>.</view>
+    <view class='item-box'>{{plateNum[2]}}</view>
+    <view class='item-box'>{{plateNum[3]}}</view>
+    <view class='item-box'>{{plateNum[4]}}</view>
+    <view class='item-box'>{{plateNum[5]}}</view>
+    <view class='item-box'>{{plateNum[6]}}</view>
+    <view class='item-box' style="border-right-color: #d7d7d7;">{{plateNum[7]}}</view>
+  </view>
+  <view class='pictrue-wrap flex' bindtap='chooseImage'>
+    <image wx:if='{{licenseNo}}' class='pictrue' src='{{licenseNo}}'></image>
+    <view wx:else class='license'>点击上传车牌</view>
+  </view>
+  <view class='btn-group flex'>
+    <button class='btn btn-confirm' bindtap='confirmAction'>确定</button>
+    <view style='width: 20rpx;'></view>
+    <button class='btn btn-clear' bindtap='clearAction'>清空</button>
+  </view>
+
+  <vehilce-panel is-show="{{isShow}}" 
+    bindok="inputOk"
+    binddelete="inputdelete"
+    bindinputchange="inputChange"
+    key-board-type="{{keyBoardType}}" 
+    backgroundColor="white" />
+</view>

@@ -1,0 +1,46 @@
+<!--pages/qztRegister/qztRegister.wxml-->
+<view>
+  <!-- <view class='header-title flex'>
+    <image class='header-title-icon' src='../../img/farendaibiao.png'></image>
+    <text class='flex1'>法人信息</text>
+  </view> -->
+  <view class='form-wrap'>
+    <view class='form-item'>
+      <view class='form-item-title'>身份证上传</view>
+      <view class='form-item-picture flex'>
+        <view class='picture-wrap' bindtap='chooseImage' data-type='legalPersonIdcardPositive'>
+          <image mode='aspectFill' src='{{legalPersonIdcardPositive || "../../img/id_positive.jpg"}}'></image>
+          <text class='picture-tip' wx:if="{{!legalPersonIdcardPositive}}">身份证正面</text>
+        </view>
+        <view class='picture-wrap' bindtap='chooseImage' data-type='legalPersonIdcardBack'>
+          <image mode='aspectFill' src='{{legalPersonIdcardBack || "../../img/id_otherside.jpg"}}'></image>
+          <text class='picture-tip' wx:if="{{!legalPersonIdcardBack}}">身份证反面</text>
+        </view>
+      </view>
+    </view>
+    <view class='form-item'>
+      <view class='form-item-title'>个体商户证件照</view>
+      <view class='form-item-picture flex'>
+        <view class='picture-wrap' bindtap='chooseImage' data-type='openingPermitPic'>
+          <image mode='aspectFill' src='{{openingPermitPic || "../../img/id_positive.jpg"}}'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='footer-tip'>
+    <view>系统将自动识别照片信息；</view>
+    <view>请将证件照对焦拍摄，保证字体清晰；</view>
+    <view>请确保您的证件照是在有效期内。</view>
+  </view>
+  <!-- <button class='btn' bindtap='handleNext'>下一步</button> -->
+</view>
+
+<view class='footer flex'>
+  <navigator url="/pages/register/step1/step1" open-type='reLaunch'>
+    <view class='pre-btn'>
+      <image class='icon' src='../../img/icon-left.png'></image>
+      <view>返回</view>
+    </view>
+  </navigator>
+  <view class='pay-btn flex1' bindtap='handleNext'>下一步</view>
+</view>

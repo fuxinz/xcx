@@ -1,0 +1,24 @@
+<view class='form-item-list'>
+  <picker range="{{resultList}}" bindchange="handleChangeResult">
+    <view class='form-item flex'>
+      <view class='form-item-title'>回访结果</view>  
+      <view class='flex1 gray'>{{ formatmsg || '请选择'}}</view>
+      <image class='icon-more' src='../../../img/icon-more.png'></image>
+    </view>
+  </picker>
+  <picker mode="date" start="{{startTime}}" bindchange="handleChangeDate">
+    <view class='form-item flex'>
+      <view class='form-item-title'>预约时间</view>
+      <view class='flex1 gray'>{{ inputDate || '请选择'}}</view>
+      <image style='width:46rpx;height:46rpx;' src='../../../img/icon-date.png'></image>
+    </view>
+  </picker>
+  <view class='form-item flex'>
+    <view class='form-item-title'>回访内容</view>
+    <view class='flex1'>
+      <textarea class='form-item-textarea' placeholder="请填写" bindinput='handldeChangeContext'></textarea>
+    </view>
+  </view>
+</view>
+
+<button class='btn' bindtap='handleSubmit'>提交</button>

@@ -1,0 +1,36 @@
+<!--pages/my/store/store.wxml-->
+<form class='list' bindsubmit="handleSubmit">
+  <view class='list-item flex'>
+    <text class='list-item-title'>汽修店名称</text>
+    <!-- <text>重庆浪里格朗汽修店</text> -->
+    <input value='{{storeInfo.storename}}' name='storename' class='flex1' placeholder="请填写" />
+  </view>
+  <view class='list-item flex'>
+    <text class='list-item-title'>联系人</text>
+    <input value='{{storeInfo.contact}}' name='contact' class='flex1' placeholder="请填写" />
+  </view>
+  <view class='list-item flex'>
+    <text class='list-item-title'>联系电话</text>
+    <input value='{{storeInfo.contel}}' name='contel' type='number' class='flex1' placeholder="请填写" />
+  </view>
+  <view class='list-item flex'>
+    <text class='list-item-title'>经营范围</text>
+    <input value='{{storeInfo.serversName}}' name='serversName' class='flex1' placeholder="请填写" />
+  </view>
+  <view class='list-item flex'>
+    <text class='list-item-title'>详细地址</text>
+    <input value='{{storeInfo.conadd}}' name='conadd' class='flex1' placeholder="请填写" />
+  </view>
+  <view class='list-item list-item-big'>
+    <view class='list-item-title'>汽修店简介</view>
+    <textarea value='{{storeInfo.remark}}' name='remark' class='list-item-textarea' placeholder='请输入汽修店简介'></textarea>
+  </view>
+  <view class='list-item list-item-big'>
+    <view class='list-item-title'>门头照</view>
+    <view class='pictrue-wrap' bindtap='chooseImage'>
+      <image wx:if='{{storeInfo.image}}' class='picture' src='{{storeInfo.image}}' mode='aspectFit'></image>
+      <text wx:else>暂未上传照片</text>
+    </view>
+  </view>
+  <button class='btn' formType="submit">保存</button>
+</form>

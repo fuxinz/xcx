@@ -1,0 +1,143 @@
+/* pages/socialMarketing/activityInfo.wxss */
+page{
+  background-color: #f4f5f6;
+  box-sizing: border-box;
+  font-size: 28rpx;
+}
+.header{
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1rpx solid #f4f5f6;
+  background-color: #f4f5f6;
+}
+.search-con{
+  width: 90%;
+  height: 70rpx;
+  margin: 20rpx auto;
+  position: relative;
+  border-radius: 10rpx;
+  background-color: #FFFFFF;
+}
+.search-con>input{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 26rpx;
+}
+.search-con>image{
+  width: 38rpx;
+  height: 38rpx;
+  position:absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 30rpx;
+}
+.sheet-tab{
+  width: 100%;
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 30rpx;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  z-index: 100
+}
+.s-title{
+  font-size: 32rpx;
+  display: flex;
+  align-items: center
+}
+.s-title>image{
+  width: 28rpx;
+  height: 17rpx;
+  margin-left: 40rpx;
+}
+.s-num{
+  text-align: right;
+  color: #999;
+  font-size: 24rpx;
+}
+.list-con{
+  margin-top: 200rpx;
+}
+.item{
+  padding-left: 30rpx;
+  margin-bottom: 20rpx;
+  background-color: #fff;
+}
+.client-info{
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  width: 100%;
+  height: 100rpx;
+  box-sizing: border-box;
+}
+.list-title{
+  width: 100%;
+  padding-right: 42rpx;
+  border-bottom: 1rpx solid #ededed;
+  align-items: center;
+}
+.list-title_left{
+  flex-direction: column;
+  justify-content: center;
+}
+.client-info>image{
+  position: absolute;
+  left: 0;
+  top: 0.4rem;
+  width: 56rpx;
+  height: 60rpx;
+}
+.list-title>text:first-child{
+  font-size: 32rpx;
+}
+.list-title>text:last-child{
+  color: #999
+}
+.coupon-info{
+    display: flex;
+    justify-content: space-between;
+    padding: 30rpx 0 30rpx 0;
+    height: 80rpx;
+    text-align: center
+}
+.coupon-info-wrap{
+    /* line-height: 109rpx; */
+    font-size: 24rpx;
+    background-color: #fff;
+    margin-right: 28rpx;
+    color: #333;
+}
+.coupon-info-wrap>view:first-child{
+  color: #999;
+  margin-bottom: 30rpx;
+}
+.colorRed{
+  color: #ff0000 !important
+}
+.ceng{
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  width: 100%;
+  top: 190rpx;
+  box-sizing: border-box;
+  z-index: 100;
+  height: 100%;
+}
+.li{
+  display: flex;
+  justify-content: space-between;
+  background-color: #FFFFFF;
+  border-bottom: 1rpx solid #dfdfdf;
+  align-items: center;
+  padding: 30rpx;
+}
+.li>image{
+  width: 40rpx;
+  height: 29rpx;
+}

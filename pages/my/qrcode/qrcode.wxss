@@ -1,0 +1,16 @@
+/* pages/my/qrcode/qrcode.wxss */
+page{
+  background-color: #f5f5f9;
+  font-size: 24rpx;
+}
+.qrcode-wrap{
+  background-color: #fff;
+  margin: 80rpx 0 40rpx;
+}
+.qrcode{
+  width: 700rpx;
+  height: 700rpx;
+}
+.footer-tip{
+  padding: 0 30rpx;
+}

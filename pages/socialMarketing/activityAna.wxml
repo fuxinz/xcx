@@ -1,0 +1,45 @@
+<!--pages/socialMarketing/activityAna.wxml-->
+<view class='warp-content'>
+  <view class='head-top'>
+    <image src='../../img/img_active5.jpg'></image>
+    <view class='top-text'>
+      <view>{{title}}</view>
+      <view><text>活动时间： {{startTime || '-'}} 到 {{endTime||'-'}} </text></view>
+    </view>
+  </view>
+  <view class='item'>
+    <view class='i-top'>全部发券总览</view>
+    <view class='i-tr-con'>
+      <view class='i-li'><view>{{recordResult.total}}</view><view>发券总张数</view></view>
+      <view class='i-li'><view>{{recordResult.used}}</view><view>券使用张数</view></view>
+      <view class='i-li'><view>{{recordResult.unused}}</view><view>券未用张数</view></view>
+      <view class='i-li'><view>{{recordResult.usedzb}}%</view><view>领券使用率</view></view>
+    </view>
+  </view>
+  <view class='item'>
+    <view class='i-top'>发券给客户</view>
+    <view class='i-tr-con'>
+      <view class='i-li'><view>{{recordResult.dx_total}}</view><view>发券总张数</view></view>
+      <view class='i-li'><view>{{recordResult.dx_used}}</view><view>券使用张数</view></view>
+      <view class='i-li'><view>{{recordResult.dx_unused}}</view><view>券未用张数</view></view>
+      <view class='i-li'><view>{{recordResult.dx_usedzb}}%</view><view>领券使用率</view></view>
+    </view>
+    <navigator url='./activityInfo?id={{id}}&source=1'>
+      <view class='look-info'>查看详情</view>
+    </navigator>
+  </view>
+  <view class='item'>
+    <view class='i-top'>发券给朋友</view>
+    <view class='i-tr-con'>
+      <view class='i-li'><view>{{recordResult.lq_total}}</view><view>发券总张数</view></view>
+      <view class='i-li'><view>{{recordResult.lq_used}}</view><view>券使用张数</view></view>
+      <view class='i-li'><view>{{recordResult.lq_unused}}</view><view>券未用张数</view></view>
+      <view class='i-li'><view>{{recordResult.lq_usedzb}}%</view><view>领券使用率</view></view>
+    </view>
+    <navigator url='./activityInfo?id={{id}}&source=2'>
+      <view class='look-info'>查看详情</view>
+    </navigator>
+  </view>
+
+
+</view>
